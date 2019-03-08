@@ -6,6 +6,8 @@
 #include "MahonyAHRS.h" // include library to filter data of gyro/akce/mag to roll, pich, yaw
 #include <Adafruit_BMP280.h> // include library so you can use barometr BMP280
 
+unsigned long time;
+
 // set pins for hc-06 bluetooth module
 #define rxPin 11
 #define txPin 10
@@ -25,8 +27,12 @@ const int esc6Pin = 2;
 // declarate and define values for reseving data from bluetooth
 SoftwareSerial mySerial =  SoftwareSerial(rxPin, txPin);
 char resCommand;
-int resSpeed, resInfo;
+int resSpeed, resInfo, resChange, resuSpeed, resuChange;
 bool resBool = false;
+int reSpeed = 0;
+int reChange = 0;
+const int maxChangeSpeed = 11;
+const int maxChangeChange = 6;
 
 // declarete brushless motor
 Servo esc1;
@@ -50,6 +56,7 @@ float pGround, pAir, pTempature, pAltitude;
 void setup() {
   //start bluetooth communication
   mySerial.begin(9600);
+  Serial.begin(9600);
 
   //start communication with IMU
   Wire.begin();
@@ -94,6 +101,7 @@ void setup() {
 
 void loop() {
   // read IMU data
+
   IMU.readSensor();
   // Mahonny Filtracion
   // Similar to Madgwick scheme but uses proportional and integral filtering on the error between estimated reference vectors and measured ones. short name local variable for readability
@@ -103,14 +111,21 @@ void loop() {
   roll = filter.getRoll();
   pitch = filter.getPitch();
   heading = filter.getYaw();
+  /*
+  Serial.print(roll);
+  Serial.print(" ");
+  Serial.print(pitch);
+  Serial.print(" ");
+  Serial.println(heading);
+  */
+  /*
+    // Compute direction to North from magnetometr not used
+    float angl_north = angle_north( IMU.getMagX_uT(), IMU.getMagY_uT(), 0.07);
 
-  // Compute direction to North from magnetometr not used
-  float angl_north = angle_north( IMU.getMagX_uT(), IMU.getMagY_uT(), 0.07);
 
-
-  //Read barometr data - altitute from referent point = start point
-  pAltitude = bmp.readAltitude(pGround);
-
+    //Read barometr data - altitute from referent point = start point
+    pAltitude = bmp.readAltitude(pGround);
+  */
   // define values for reading data from bluetooth
   boolean  newData = false;
   byte resData[32];
@@ -169,6 +184,8 @@ void separateBlueData(byte &numReceived, byte resData[], char &resCommand, int &
   resCommand = 'Y';
   resSpeed = 0;
   resInfo = 0;
+  resChange = 0;
+
 
   // B - balace
   // F - flying in direction
@@ -178,7 +195,7 @@ void separateBlueData(byte &numReceived, byte resData[], char &resCommand, int &
 
   for (int i = 0; i < numReceived; i++) {
     //Type of command
-    if (resData[i] == 'B' || resData[i] == 'F' || resData[i] == 'R' || resData[i] == 'C' || resData[i] == 'D')
+    if (resData[i] == 'B' || resData[i] == 'F' || resData[i] == 'R' || resData[i] == 'C' || resData[i] == 'D' || resData[i] == 'E')
     {
       resCommand =  resData[i];
     }
@@ -186,11 +203,18 @@ void separateBlueData(byte &numReceived, byte resData[], char &resCommand, int &
     if (resData[i] == 'S') {
       if (isDigit(char(resData[i + 1])) && isDigit(char(resData[i + 2]))) {
         byte rSpeed[2] = {resData[i + 1], resData[i + 2]};
-        resSpeed = atoi(rSpeed);
+        resuSpeed = atoi(rSpeed);
+
+        if ( (resuSpeed - reSpeed) < maxChangeSpeed && resuSpeed < 100) {
+          resSpeed = resuSpeed;
+          reSpeed = resuSpeed;
+        }
+        else {
+          resSpeed = reSpeed;
+        }
       }
       else {
-        resSpeed = 0;
-        //mySerial.println("Try again");
+        resSpeed = reSpeed;
       }
     }
     // Read Info of Command 01-99
@@ -204,18 +228,37 @@ void separateBlueData(byte &numReceived, byte resData[], char &resCommand, int &
         //mySerial.println("Try again");
       }
     }
+    // Read Info of Command 01-99
+    if (resData[i] == 'G') {
+      if (isDigit(char(resData[i + 1])) && isDigit(char(resData[i + 2]))) {
+        byte rChange[2] = {resData[i + 1], resData[i + 2]};
+        resuChange = atoi(rChange);
+
+        if ( (resuChange - reChange) < maxChangeChange && resuChange < 100) {
+          resChange = resuChange;
+          reChange = resuChange;
+        }
+        else {
+          resChange = reChange;
+        }
+      }
+      else {
+        resChange = reChange;
+      }
+    }
   }
 
   //Finnal conditions
-  if (resInfo == 0) {
+  if (resChange == 0) {
     resSpeed = 0;
     //mySerial.println("Try again");
   }
   if (resSpeed == 0) {
-    resInfo = 0;
+    resChange = 0;
     //mySerial.println("Try again");
   }
 }
+
 
 void doCommandDrone(char resCommand, int resSpeed, int resInfo) {
   //Command drone
@@ -227,16 +270,15 @@ void doCommandDrone(char resCommand, int resSpeed, int resInfo) {
   // Info - B-speed change 1 - 99, F - azimuth 1 - 99, R - CW(1-49)/CCW(50-99)
 
   if (resCommand == 'B') {
-    
-      if (resBool) {
+
+    if (resBool) {
       mySerial.print("balance ");
       mySerial.print(resSpeed);
-      mySerial.print(" info ");
-      mySerial.println(resInfo);
-      }
-    
-    float balanc_angle = atan2(pitch, roll) * 180 / PI + 180;
-    balanceDrone((resSpeed * 10) + 1000, (resInfo * 10), balanc_angle);
+      mySerial.print(" change ");
+      mySerial.println(resChange);
+    }
+
+    balanceDrone(pitch, roll, (resSpeed * 10) + 1000, (resChange * 10));
 
     resBool = false;
   }
@@ -245,12 +287,14 @@ void doCommandDrone(char resCommand, int resSpeed, int resInfo) {
       mySerial.print("flying ");
       mySerial.print(resSpeed);
       mySerial.print(" info ");
-      mySerial.println(resInfo);
+      mySerial.print(resInfo);
+      mySerial.print(" change ");
+      mySerial.println(resChange);
       mySerial.print(" map ");
       mySerial.println(map(resInfo, 0, 99, 0, 360));
     }
 
-    flyDrone(1000, (resSpeed * 10) , map(resInfo, 0, 99, 0, 360));
+    flyDrone(1000 + (resSpeed * 10) , (resChange * 10), map(resInfo, 0, 99, 0, 360));
 
     resBool = false;
   }
@@ -260,11 +304,13 @@ void doCommandDrone(char resCommand, int resSpeed, int resInfo) {
       mySerial.print("rotate ");
       mySerial.print(resSpeed);
       mySerial.print(" info ");
-      mySerial.println(resInfo);
+      mySerial.print(resInfo);
+      mySerial.print(" change ");
+      mySerial.println(resChange);
     }
 
     if (heading > 10 || heading < 350) {
-      rotateDrone(1000, (resSpeed * 10), map(resInfo, 0, 99, 0, 360) );
+      rotateDrone(1000 + (resSpeed * 10) , (resChange * 10), map(resInfo, 0, 99, 0, 360) );
     }
 
     resBool = false;
@@ -294,6 +340,68 @@ void doCommandDrone(char resCommand, int resSpeed, int resInfo) {
     esc5.writeMicroseconds(minSignal);
     esc6.writeMicroseconds(minSignal);
   }
+  else if (resCommand == 'E') {
+    if (resBool) {
+      mySerial.print("esc ");
+      mySerial.print(resSpeed);
+      mySerial.print(" number ");
+      mySerial.println(resInfo);
+    }
+    if (resInfo == 1) {
+      esc1.writeMicroseconds(resSpeed * 10 + 1000);
+      esc2.writeMicroseconds(minSignal);
+      esc3.writeMicroseconds(minSignal);
+      esc4.writeMicroseconds(minSignal);
+      esc5.writeMicroseconds(minSignal);
+      esc6.writeMicroseconds(minSignal);
+    }
+    else if (resInfo == 2) {
+      esc1.writeMicroseconds(minSignal);
+      esc2.writeMicroseconds(resSpeed * 10 + 1000);
+      esc3.writeMicroseconds(minSignal);
+      esc4.writeMicroseconds(minSignal);
+      esc5.writeMicroseconds(minSignal);
+      esc6.writeMicroseconds(minSignal);
+    }
+    else if (resInfo == 3) {
+      esc1.writeMicroseconds(minSignal);
+      esc2.writeMicroseconds(minSignal);
+      esc3.writeMicroseconds(resSpeed * 10 + 1000);
+      esc4.writeMicroseconds(minSignal);
+      esc5.writeMicroseconds(minSignal);
+      esc6.writeMicroseconds(minSignal);
+    }
+    else if (resInfo == 4) {
+      esc1.writeMicroseconds(minSignal);
+      esc2.writeMicroseconds(minSignal);
+      esc3.writeMicroseconds(minSignal);
+      esc4.writeMicroseconds(resSpeed * 10 + 1000);
+      esc5.writeMicroseconds(minSignal);
+      esc6.writeMicroseconds(minSignal);
+    }
+    else if (resInfo == 5) {
+      esc1.writeMicroseconds(minSignal);
+      esc2.writeMicroseconds(minSignal);
+      esc3.writeMicroseconds(minSignal);
+      esc4.writeMicroseconds(minSignal);
+      esc5.writeMicroseconds(resSpeed * 10 + 1000);
+      esc6.writeMicroseconds(minSignal);
+    }
+    else if (resInfo == 6) {
+      esc1.writeMicroseconds(minSignal);
+      esc2.writeMicroseconds(minSignal);
+      esc3.writeMicroseconds(minSignal);
+      esc4.writeMicroseconds(minSignal);
+      esc5.writeMicroseconds(minSignal);
+      esc6.writeMicroseconds(resSpeed * 10 + 1000);
+    }
+    else {
+
+    }
+
+    resBool = false;
+
+  }
   else {
     if (resBool) {
       mySerial.println("Try again");
@@ -307,52 +415,51 @@ void escCalib(Servo esc1, int esc1Pin, Servo esc2, int esc2Pin, Servo esc3, int 
 {
   //Esc calibration set pin, minSpeed and maxSpeed
   // this is nesseery, without calibration bruslesh motor dont work
-
   // set brushsless motor by pin
+
   esc1.attach(esc1Pin);
   delay(10);
+  esc1.writeMicroseconds(maxSignal);
+  delay(1500);
+  esc1.writeMicroseconds(minSignal);
+  delay(1500);
+
   esc2.attach(esc2Pin);
   delay(10);
+  esc2.writeMicroseconds(maxSignal);
+  delay(1500);
+  esc2.writeMicroseconds(minSignal);
+  delay(1500);
+
   esc3.attach(esc3Pin);
   delay(10);
+  esc3.writeMicroseconds(maxSignal);
+  delay(1500);
+  esc3.writeMicroseconds(minSignal);
+  delay(1500);
+
   esc4.attach(esc4Pin);
   delay(10);
+  esc4.writeMicroseconds(maxSignal);
+  delay(1500);
+  esc4.writeMicroseconds(minSignal);
+  delay(1500);
+
   esc5.attach(esc5Pin);
   delay(10);
-  esc6.attach(esc6Pin);
-
-  delay(2000);
-  esc1.writeMicroseconds(maxSignal);
-  delay(2000);
-  esc1.writeMicroseconds(minSignal);
-  delay(2000);
-
-  esc2.writeMicroseconds(maxSignal);
-  delay(2000);
-  esc2.writeMicroseconds(minSignal);
-  delay(2000);
-
-  esc3.writeMicroseconds(maxSignal);
-  delay(2000);
-  esc3.writeMicroseconds(minSignal);
-  delay(2000);
-
-  esc4.writeMicroseconds(maxSignal);
-  delay(2000);
-  esc4.writeMicroseconds(minSignal);
-  delay(2000);
-
   esc5.writeMicroseconds(maxSignal);
-  delay(2000);
+  delay(1500);
   esc5.writeMicroseconds(minSignal);
-  delay(2000);
+  delay(1500);
 
+
+  esc6.attach(esc6Pin);
+  delay(10);
   esc6.writeMicroseconds(maxSignal);
-  delay(2000);
+  delay(1500);
   esc6.writeMicroseconds(minSignal);
-  delay(2000);
+  delay(1500);
 
-  delay(5000);
 }
 
 static float angle_north( float mx, float my, float magDeclinRad)
@@ -378,7 +485,7 @@ static void controlSpeedBetween2Motors(int &speed_first, int &speed_second, floa
   speed_first = speed_change * angle / 60;
 }
 
-static void balanceDrone(int speed, int speedChange, float balanc_angle)
+static void balanceDrone(float pitch, float roll, int speed, int speedChange)
 {
   // Control drone balance by IMU for hexacopter
   // Calculate direction of tilt and regulate speed of bruslesh motors
@@ -392,6 +499,17 @@ static void balanceDrone(int speed, int speedChange, float balanc_angle)
   // global value esc1 -> esc6 by Servo.h
   // global value MIN_SIGNAL = 1000
 
+  float balanc_angle = atan2(pitch, roll) * 180 / PI + 180;
+
+  if (abs(pitch) < 0.5 && abs(roll) < 0.5) {
+    speedChange = 0;
+  }
+  else {
+    //Serial.println(sqrt(pitch * pitch + roll * roll) / 90);
+    speedChange *= sqrt(pitch * pitch + roll * roll) / 90;
+  }
+  
+  //Serial.println(speedChange);
   if (balanc_angle > 0 && balanc_angle <= 30 )
   {
     int speed_first;
@@ -399,17 +517,16 @@ static void balanceDrone(int speed, int speedChange, float balanc_angle)
 
     balanc_angle += 30;
 
-    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
-
     speed_first = speedChange;
     speed_second = speedChange;
+    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
 
     esc1.writeMicroseconds(speed);
     esc2.writeMicroseconds(speed + speed_first);
     esc3.writeMicroseconds(speed + speed_second);
     esc4.writeMicroseconds(speed);
-    esc5.writeMicroseconds(speed);
-    esc6.writeMicroseconds(speed);
+    esc5.writeMicroseconds(speed - speed_first);
+    esc6.writeMicroseconds(speed - speed_second);
   }
   else if (balanc_angle > 330 && balanc_angle <= 360)
   {
@@ -418,17 +535,16 @@ static void balanceDrone(int speed, int speedChange, float balanc_angle)
 
     balanc_angle -= 330;
 
-    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
-
     speed_first = speedChange;
     speed_second = speedChange;
+    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
 
     esc1.writeMicroseconds(speed);
     esc2.writeMicroseconds(speed + speed_first);
     esc3.writeMicroseconds(speed + speed_second);
     esc4.writeMicroseconds(speed);
-    esc5.writeMicroseconds(speed);
-    esc6.writeMicroseconds(speed);
+    esc5.writeMicroseconds(speed - speed_first);
+    esc6.writeMicroseconds(speed - speed_second);
   }
   else if (balanc_angle > 30 && balanc_angle <= 90)
   {
@@ -436,16 +552,15 @@ static void balanceDrone(int speed, int speedChange, float balanc_angle)
     int speed_second;
     balanc_angle -= 30;
 
-    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
-
     speed_first = speedChange;
     speed_second = speedChange;
+    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
 
     esc1.writeMicroseconds(speed + speed_first);
     esc2.writeMicroseconds(speed + speed_second);
     esc3.writeMicroseconds(speed);
-    esc4.writeMicroseconds(speed);
-    esc5.writeMicroseconds(speed);
+    esc4.writeMicroseconds(speed - speed_first);
+    esc5.writeMicroseconds(speed - speed_second);
     esc6.writeMicroseconds(speed);
   }
   else if (balanc_angle > 90 && balanc_angle <= 150)
@@ -454,15 +569,14 @@ static void balanceDrone(int speed, int speedChange, float balanc_angle)
     int speed_second;
     balanc_angle -= 90;
 
-    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
-
     speed_first = speedChange;
     speed_second = speedChange;
+    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
 
     esc1.writeMicroseconds(speed + speed_second);
     esc2.writeMicroseconds(speed);
-    esc3.writeMicroseconds(speed);
-    esc4.writeMicroseconds(speed);
+    esc3.writeMicroseconds(speed - speed_first);
+    esc4.writeMicroseconds(speed - speed_second);
     esc5.writeMicroseconds(speed);
     esc6.writeMicroseconds(speed + speed_first);
   }
@@ -472,14 +586,13 @@ static void balanceDrone(int speed, int speedChange, float balanc_angle)
     int speed_second;
     balanc_angle -= 150;
 
-    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
-
     speed_first = speedChange;
     speed_second = speedChange;
+    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
 
     esc1.writeMicroseconds(speed);
-    esc2.writeMicroseconds(speed);
-    esc3.writeMicroseconds(speed);
+    esc2.writeMicroseconds(speed - speed_first);
+    esc3.writeMicroseconds(speed - speed_second);
     esc4.writeMicroseconds(speed);
     esc5.writeMicroseconds(speed + speed_first);
     esc6.writeMicroseconds(speed + speed_second);
@@ -490,13 +603,12 @@ static void balanceDrone(int speed, int speedChange, float balanc_angle)
     int speed_second;
     balanc_angle -= 210;
 
-    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
-
     speed_first = speedChange;
     speed_second = speedChange;
+    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
 
-    esc1.writeMicroseconds(speed);
-    esc2.writeMicroseconds(speed);
+    esc1.writeMicroseconds(speed - speed_first);
+    esc2.writeMicroseconds(speed - speed_second);
     esc3.writeMicroseconds(speed);
     esc4.writeMicroseconds(speed + speed_first);
     esc5.writeMicroseconds(speed + speed_second);
@@ -508,18 +620,18 @@ static void balanceDrone(int speed, int speedChange, float balanc_angle)
     int speed_second;
     balanc_angle -= 270;
 
-    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);
-
     speed_first = speedChange;
     speed_second = speedChange;
+    //controlSpeedBetween2Motors(speed_first, speed_second,  balanc_angle, speedChange);,
 
-    esc1.writeMicroseconds(speed);
+    esc1.writeMicroseconds(speed - speed_second);
     esc2.writeMicroseconds(speed);
     esc3.writeMicroseconds(speed + speed_first);
     esc4.writeMicroseconds(speed + speed_second);
     esc5.writeMicroseconds(speed);
-    esc6.writeMicroseconds(speed);
+    esc6.writeMicroseconds(speed - speed_first);
   }
+
 }
 
 static void rotateDrone(int speed, int speedChange, float angle)
@@ -653,4 +765,6 @@ static void flyDrone(int speed, int speedChange, float balanc_angle)
     esc5.writeMicroseconds(speed);
     esc6.writeMicroseconds(speed);
   }
+
+
 }
