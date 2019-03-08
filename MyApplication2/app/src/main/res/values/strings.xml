@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Drone C004</string>
+    <string name="button_bluetooth">Bluetooth</string>
+    <string name="button_wifi">Wifi</string>
+    <string name="textMainActivity">Connection</string>
+    <string name="textBack">Back</string>
+    <string name="google_maps_API_key">AIzaSyD7VmOu-rEcrmdkFrLpyXPJCv4L-rSqAvs</string>
+</resources>
