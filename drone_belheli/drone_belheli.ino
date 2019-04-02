@@ -1,12 +1,34 @@
-/*ESC calibration sketch; author: ELECTRONOOBS */
+/*
+  Flying control
+  Using commands
+  B - balance dorne
+  F - flying in direction
+  R - rotate drone
+  E - try each motor one by one
+  C - calibrate esc, do it first
+
+  S - speed 0-99
+  G - speed change 0-99
+  A - info 0-99, angle, number of esc
+  P - PID kp input/10
+  I - PID ki input/100
+  D - PID kd input/10
+
+*/
 #include <Servo.h>
 #include <Wire.h>
-#include <SoftwareSerial.h> // include the SoftwareSerial library so you can use its functions
 #include "MPU9250.h" //include library with gyro/akce/mag
 #include "MahonyAHRS.h" // include library to filter data of gyro/akce/mag to roll, pich, yaw
-#include <Adafruit_BMP280.h> // include library so you can use barometr BMP280
+#include <SoftwareSerial.h> // include the SoftwareSerial library so you can use its functions
 
 unsigned long time;
+
+//PID
+float kp, ki, kd;
+float elapsedTime, timePrev;
+float prevErrorRoll = 0;
+float prevErrorPitch = 0;
+float prevErrorYaw = 0;
 
 // set pins for hc-06 bluetooth module
 #define rxPin 11
@@ -47,11 +69,7 @@ Mahony filter;
 
 // an MPU9250 object with the MPU-9250 sensor on I2C bus 0 with address 0x68,
 MPU9250 IMU(Wire, 0x68);
-float roll, pitch, heading;
-
-// Set barometr BPM280
-Adafruit_BMP280 bmp; // I2C
-float pGround, pAir, pTempature, pAltitude;
+float roll, pitch, yaw;
 
 void setup() {
   //start bluetooth communication
@@ -79,27 +97,16 @@ void setup() {
   //Mahonny filter
   filter.begin(50);
 
-  //initialization of barometr bmp
-  if (!bmp.begin()) {
-    mySerial.println(F("Could not find a valid BMP280 sensor, check wiring!"));
-    while (1);
-  }
-
-  /* Default settings from datasheet. */
-  bmp.setSampling(Adafruit_BMP280::MODE_NORMAL,     /* Operating Mode. */
-                  Adafruit_BMP280::SAMPLING_X2,     /* Temp. oversampling */
-                  Adafruit_BMP280::SAMPLING_X16,    /* Pressure oversampling */
-                  Adafruit_BMP280::FILTER_X16,      /* Filtering. */
-                  Adafruit_BMP280::STANDBY_MS_500); /* Standby time. */
-
-  // Read pressure hPa on the ground for relative altitude in hPa
-  delay(1000);
-  pGround = bmp.readPressure() / 100;
-
   mySerial.println("Drone is ready");
+  time = millis(); //Start counting time in milliseconds
 }
 
 void loop() {
+
+  timePrev = time;  // the previous time is stored before the actual time read
+  time = millis();  // actual time read
+  elapsedTime = (time - timePrev) / 1000;
+
   // read IMU data
 
   IMU.readSensor();
@@ -110,21 +117,17 @@ void loop() {
   // Compute roll, pitch, yaw
   roll = filter.getRoll();
   pitch = filter.getPitch();
-  heading = filter.getYaw();
+  yaw = filter.getYaw();
   /*
-  Serial.print(roll);
-  Serial.print(" ");
-  Serial.print(pitch);
-  Serial.print(" ");
-  Serial.println(heading);
+    Serial.print(roll);
+    Serial.print(" ");
+    Serial.print(pitch);
+    Serial.print(" ");
+    Serial.println(heading);
   */
   /*
     // Compute direction to North from magnetometr not used
     float angl_north = angle_north( IMU.getMagX_uT(), IMU.getMagY_uT(), 0.07);
-
-
-    //Read barometr data - altitute from referent point = start point
-    pAltitude = bmp.readAltitude(pGround);
   */
   // define values for reading data from bluetooth
   boolean  newData = false;
@@ -138,11 +141,11 @@ void loop() {
   if (newData == true) {
     resBool = true;
     // separeta bluetooth data for next using
-    separateBlueData(numReceived, resData, resCommand, resSpeed, resInfo);
+    separateBlueData(numReceived, resData, resCommand, resSpeed, resInfo, kp, ki, kd);
   }
 
   // finnaly this do something with movement of drone :)
-  doCommandDrone(resCommand, resSpeed, resInfo);
+  doCommandDrone(resCommand, resSpeed, resInfo, kp, ki, kd);
 }
 
 void getBlueData(SoftwareSerial &mySerial, byte &numReceived, byte resData[], boolean &newData) {
@@ -179,7 +182,7 @@ void getBlueData(SoftwareSerial &mySerial, byte &numReceived, byte resData[], bo
   }
 }
 
-void separateBlueData(byte &numReceived, byte resData[], char &resCommand, int &resSpeed, int &resInfo) {
+void separateBlueData(byte &numReceived, byte resData[], char &resCommand, int &resSpeed, int &resInfo, float &kp, float &ki, float &kd) {
   //Inicialition for NULL value
   resCommand = 'Y';
   resSpeed = 0;
@@ -195,7 +198,7 @@ void separateBlueData(byte &numReceived, byte resData[], char &resCommand, int &
 
   for (int i = 0; i < numReceived; i++) {
     //Type of command
-    if (resData[i] == 'B' || resData[i] == 'F' || resData[i] == 'R' || resData[i] == 'C' || resData[i] == 'D' || resData[i] == 'E')
+    if (resData[i] == 'B' || resData[i] == 'F' || resData[i] == 'R' || resData[i] == 'C' || resData[i] == 'E' || resData[i] == 'X')
     {
       resCommand =  resData[i];
     }
@@ -246,6 +249,38 @@ void separateBlueData(byte &numReceived, byte resData[], char &resCommand, int &
         resChange = reChange;
       }
     }
+
+    // Value to PID control system drone
+    if (resData[i] == 'P') {
+
+      if (isDigit(char(resData[i + 1])) && isDigit(char(resData[i + 2]))) {
+        byte rInfo[2] = {resData[i + 1], resData[i + 2]};
+        kp = atof(rInfo) / 10;
+      }
+      else {
+        //mySerial.println("Try again");
+      }
+    }
+    if (resData[i] == 'I') {
+
+      if (isDigit(char(resData[i + 1])) && isDigit(char(resData[i + 2]))) {
+        byte rInfo[2] = {resData[i + 1], resData[i + 2]};
+        ki = atof(rInfo) / 100;
+      }
+      else {
+        //mySerial.println("Try again");
+      }
+    }
+    if (resData[i] == 'D') {
+
+      if (isDigit(char(resData[i + 1])) && isDigit(char(resData[i + 2]))) {
+        byte rInfo[2] = {resData[i + 1], resData[i + 2]};
+        kd = atof(rInfo) / 1000;
+      }
+      else {
+        //mySerial.println("Try again");
+      }
+    }
   }
 
   //Finnal conditions
@@ -260,41 +295,44 @@ void separateBlueData(byte &numReceived, byte resData[], char &resCommand, int &
 }
 
 
-void doCommandDrone(char resCommand, int resSpeed, int resInfo) {
+void doCommandDrone(char resCommand, int resSpeed, int resInfo, float kp, float ki, float kd) {
   //Command drone
-
-  // B - balace
-  // F - flying in direction
-  // R - rotate
-  // speed 0-99
-  // Info - B-speed change 1 - 99, F - azimuth 1 - 99, R - CW(1-49)/CCW(50-99)
-
   if (resCommand == 'B') {
 
     if (resBool) {
-      mySerial.print("balance ");
-      mySerial.print(resSpeed);
-      mySerial.print(" change ");
-      mySerial.println(resChange);
+      mySerial.print("kp ");
+      mySerial.print(kp);
+      mySerial.print(" ki ");
+      mySerial.print(ki);
+      mySerial.print(" kd ");
+      mySerial.println(kd);
     }
 
-    balanceDrone(pitch, roll, (resSpeed * 10) + 1000, (resChange * 10));
+    //balanceDrone(pitch, roll, (resSpeed * 10) + 1000, (resChange * 10));
+    balancePID(pitch, roll, yaw, 0, 0, yaw, kp, ki, kd, (resSpeed * 10) + 1000);
 
     resBool = false;
   }
   else if (resCommand == 'F') {
     if (resBool) {
-      mySerial.print("flying ");
-      mySerial.print(resSpeed);
-      mySerial.print(" info ");
-      mySerial.print(resInfo);
-      mySerial.print(" change ");
-      mySerial.println(resChange);
-      mySerial.print(" map ");
-      mySerial.println(map(resInfo, 0, 99, 0, 360));
+      /*
+        mySerial.print("flying ");
+        mySerial.print(resSpeed);
+        mySerial.print(" info ");
+        mySerial.print(resInfo);
+        mySerial.print(" change ");
+        mySerial.println(resChange);
+        mySerial.print(" map ");
+        mySerial.println(map(resInfo, 0, 99, 0, 360));
+      */
     }
+    // set pitch
+    resInfo = map(resInfo, 0, 99, -33, 33);
+    //set roll
+    resChange = map(resChange, 0, 99, -33, 33);
 
-    flyDrone(1000 + (resSpeed * 10) , (resChange * 10), map(resInfo, 0, 99, 0, 360));
+    //flyDrone(1000 + (resSpeed * 10) , (resChange * 10), map(resInfo, 0, 99, 0, 360));
+    balancePID(pitch, roll, yaw, resInfo, resChange, yaw, kp, ki, kd, (resSpeed * 10) + 1000);
 
     resBool = false;
   }
@@ -308,10 +346,12 @@ void doCommandDrone(char resCommand, int resSpeed, int resInfo) {
       mySerial.print(" change ");
       mySerial.println(resChange);
     }
+    
+    // set pitch
+    resInfo = map(resInfo, 0, 99, -33, 33);
+    balancePID(pitch, roll, yaw, 0, 0, resInfo, kp, ki, kd, (resSpeed * 10) + 1000);
+    //rotateDrone(1000 + (resSpeed * 10) , (resChange * 10), map(resInfo, 0, 99, 0, 360) );
 
-    if (heading > 10 || heading < 350) {
-      rotateDrone(1000 + (resSpeed * 10) , (resChange * 10), map(resInfo, 0, 99, 0, 360) );
-    }
 
     resBool = false;
   }
@@ -324,21 +364,13 @@ void doCommandDrone(char resCommand, int resSpeed, int resInfo) {
 
     resBool = false;
   }
-  else if (resCommand == 'D') {
-    mySerial.print(roll);
-    mySerial.print(" ");
-    mySerial.print(pitch);
-    mySerial.print(" ");
-    mySerial.print(heading);
-    mySerial.print(" ");
-    mySerial.println(pAltitude);
-
-    esc1.writeMicroseconds(minSignal);
-    esc2.writeMicroseconds(minSignal);
-    esc3.writeMicroseconds(minSignal);
-    esc4.writeMicroseconds(minSignal);
-    esc5.writeMicroseconds(minSignal);
-    esc6.writeMicroseconds(minSignal);
+  else if (resCommand == 'X') {
+    esc1.writeMicroseconds(1000);
+    esc2.writeMicroseconds(1000);
+    esc3.writeMicroseconds(1000);
+    esc4.writeMicroseconds(1000);
+    esc5.writeMicroseconds(1000);
+    esc6.writeMicroseconds(1000);
   }
   else if (resCommand == 'E') {
     if (resBool) {
@@ -462,28 +494,75 @@ void escCalib(Servo esc1, int esc1Pin, Servo esc2, int esc2Pin, Servo esc3, int 
 
 }
 
-static float angle_north( float mx, float my, float magDeclinRad)
-{
-  //Calculate angle to North from magnetometr mx, my in degrees
-  //Fix by magnetic Declination of lacation
-  float angle_north = atan2(mx, my);
-  angle_north += magDeclinRad;
+static void balancePID(float pitch, float roll, float yaw, float desiredPitch, float desiredRoll, float desiredYaw, float kp, float ki, float kd, int throttle) {
+  /*///////////////////////////P I D///////////////////////////////////*/
+  /*Remember that for the balance we will use just one axis. I've choose the x angle
+    to implement the PID with. That means that the x axis of the IMU has to be paralel to
+    the balance*/
 
-  // corection of angle
-  if (angle_north < 0)
-    angle_north += 2 * PI;
-  if (angle_north > 2 * PI)
-    angle_north -= 2 * PI;
+  /*First calculate the error between the desired angle and
+    the real measured angle*/
+  float errorPitch =  pitch - desiredPitch;
+  float errorRoll = - roll + desiredRoll;
+  float errorYaw = yaw - desiredYaw;
 
-  return angle_north * 180 / M_PI;
+  /*Next the proportional value of the PID is just a proportional constant
+    multiplied by the error*/
+
+  float pidPpitch = kp * errorPitch;
+  float pidProll = kp * errorRoll;
+  float pidPYaw = kp * errorYaw;
+  float pidIpitch = 0;
+  float pidIroll = 0;
+  float pidIYaw = 0;
+  float pidDpitch, pidDroll, pidDYaw;
+
+  /*The integral part should only act if we are close to the
+    desired position but we want to fine tune the error. That's
+    why I've made a if operation for an error between -3 and 3 degree.
+    To integrate we just sum the previous integral value with the
+    error multiplied by  the integral constant. This will integrate (increase)
+    the value each loop till we reach the 0 point*/
+  if (-3 < errorPitch < 3)
+  {
+    pidIpitch = pidIpitch + (ki * errorPitch);
+  }
+  if (-3 < errorRoll < 3)
+  {
+    pidIroll = pidIroll + (ki * errorRoll);
+  }
+  pidIYaw = pidIYaw + (ki * errorYaw);
+
+  /*The last part is the derivate. The derivate acts upon the speed of the error.
+    As we know the speed is the amount of error that produced in a certain amount of
+    time divided by that time. For taht we will use a variable called previous_error.
+    We substract that value from the actual error and divide all by the elapsed time.
+    Finnaly we multiply the result by the derivate constant*/
+  pidDpitch = kd * ((errorPitch - prevErrorPitch) / elapsedTime);
+  pidDroll = kd * ((errorRoll - prevErrorRoll) / elapsedTime);
+  pidDYaw = kd * ((errorYaw - prevErrorYaw) / elapsedTime);
+
+  float pidPitch = pidPpitch + pidIpitch + pidDpitch;
+  float pidRoll = pidProll + pidIroll + pidDroll;
+  float pidYaw = pidPYaw + pidIYaw + pidDYaw;
+
+  /*Finnaly using the servo function we create the PWM pulses with the calculated
+    width for each pulse*/
+
+  esc1.writeMicroseconds(minMax(throttle - pidPitch + pidYaw, throttle, 2000));
+  esc2.writeMicroseconds(minMax(throttle - pidPitch + pidRoll - pidYaw, throttle, 2000));
+  esc3.writeMicroseconds(minMax(throttle + pidPitch + pidRoll + pidYaw, throttle, 2000));
+  esc4.writeMicroseconds(minMax(throttle + pidPitch - pidYaw, throttle, 2000));
+  esc5.writeMicroseconds(minMax(throttle + pidPitch - pidRoll + pidYaw, throttle, 2000));
+  esc6.writeMicroseconds(minMax(throttle - pidPitch - pidRoll - pidYaw, throttle, 2000));
+
+
+  //Remember to store the previous error.
+  float prevErrorRoll = errorRoll;
+  float prevErrorPitch = errorPitch;
+  float prevErrorYaw = errorYaw;
 }
 
-static void controlSpeedBetween2Motors(int &speed_first, int &speed_second, float angle, int speed_change)
-{
-  // Calculate how much part of speed to change movement
-  speed_second = speed_change * (60 - angle) / 60;
-  speed_first = speed_change * angle / 60;
-}
 
 static void balanceDrone(float pitch, float roll, int speed, int speedChange)
 {
@@ -508,7 +587,7 @@ static void balanceDrone(float pitch, float roll, int speed, int speedChange)
     //Serial.println(sqrt(pitch * pitch + roll * roll) / 90);
     speedChange *= sqrt(pitch * pitch + roll * roll) / 90;
   }
-  
+
   //Serial.println(speedChange);
   if (balanc_angle > 0 && balanc_angle <= 30 )
   {
@@ -636,6 +715,7 @@ static void balanceDrone(float pitch, float roll, int speed, int speedChange)
 
 static void rotateDrone(int speed, int speedChange, float angle)
 {
+  // rotate dron to set angle
   if (angle < 180) {
     esc1.writeMicroseconds(speed + speedChange);
     esc2.writeMicroseconds(speed);
@@ -765,6 +845,37 @@ static void flyDrone(int speed, int speedChange, float balanc_angle)
     esc5.writeMicroseconds(speed);
     esc6.writeMicroseconds(speed);
   }
+}
 
+static  float minMax(float value, float min_value, float max_value) {
+  // fuction which reduce value over interval <min_value; max_value>
+  if (value > max_value) {
+    value = max_value;
+  } else if (value < min_value) {
+    value = min_value;
+  }
+  return value;
+}
 
+static float angle_north( float mx, float my, float magDeclinRad)
+{
+  //Calculate angle to North from magnetometr mx, my in degrees
+  //Fix by magnetic Declination of lacation
+  float angle_north = atan2(mx, my);
+  angle_north += magDeclinRad;
+
+  // corection of angle
+  if (angle_north < 0)
+    angle_north += 2 * PI;
+  if (angle_north > 2 * PI)
+    angle_north -= 2 * PI;
+
+  return angle_north * 180 / M_PI;
+}
+
+static void controlSpeedBetween2Motors(int &speed_first, int &speed_second, float angle, int speed_change)
+{
+  // Calculate how much part of speed to change movement
+  speed_second = speed_change * (60 - angle) / 60;
+  speed_first = speed_change * angle / 60;
 }
