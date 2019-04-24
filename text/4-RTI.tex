@@ -1,0 +1,44 @@
+\chapter{RTI}
+\label{4-RTI}
+
+Metoda RTI (Reflectance Transformation Imaging) je výpočetní fotografická metoda, která zachycuje tvar a barvu objektu a následně umožňuje interaktivní nasvícení objektu z jakéhokoli směru pomocí specializovaného softwaru. Metoda umožňuje také matematické zvýraznění povrchu objektu, které vyzdvihne i velmi jemné detaily a díky těmto vlastnostem se využívá například pro zachycení jemných, špatně čitelných rytin, numismatice či v restaurování obrazů. Metoda i specializovaný software jsou volně dostupné.
+
+\section{Princip metody}
+
+Vstupními daty metody je série snímků (RGB) z jednoho neměnného stanoviska a různými směry osvětlení objektu, poloha zdroje světla je známá pro každý snímek.  \\ 
+
+Normálový vektor, je vektor kolmý k povrchu objektu v každém jeho bodě. Velikost úhlu dopadu světelného paprsku na povrch objektu a jeho odrazu je vůči normále stejná (viz obrázek). \\
+
+%doplnit obrázek!!!!
+
+Díky sérii forografií ze stejného stanoviska a s různými směry osvětlení, je možné následně určit normálový vektor pro každý pixel snímku a tím uložit do snímku informaci o třetím rozměru objektu.\\
+
+\section{Postup snímkování}
+
+Fotoaparát je umístěn tak, aby osa záběru byla kolmá na snímaný objekt a následně je pořízena série fotografií z neměnného stanoviska a různými směry osvětlení objektu. Fotoaparát se během snímkování nesmí pohnout, proto je doporučeno jej ovládat dálkově specializovaným SW (např. Nikon Camera Control Pro 2).
+
+Postup snímkování se dělí na dva druhy podle způsobu určení polohy zdroje světla - pomocí světelného dómu, nebo odrazných černých či červených koulí.
+
+\begin{enumerate}
+	\item {Odrazné koule}\\
+	Při snímání je k zájmovému objektu naistalována černá či červená odrazná koule a to tak, aby nevrhala stín na zájmový objekt při jakémkoli směru osvícení v sérii a zabírala alespoň 250 pixelů z celého snímku. Následně je pohybováno se zdrojem světla (např. externí blesk) po povrchu polokoule tak, aby její pokrytí bylo rovnoměrné - viz obrázek.
+	%obrázek
+	Při zpracování snímků je na každé fotografii automaticky vyhledána odrazná koule (možno upravit manuálně) a podle odrazu světla na ní je určena poloha zdroje světla.
+	
+	\item {Světelný dóm}\\
+	%obrázek 
+	Při využití světelného dómu je poloha světel určena pouze jednou - do středu dómu je umístěna odrazná koule, pořízena série fotografií s osvětlením ze všech světel dómu a následně jsou snímky zpracovány v RTI a vyexportovány soubory s polohou světel. 
+	Při snímání zájmovýcj objektů již není třeba znovu určovat polohu světel, pouze se do projektu při zpracování nahraje soubor s již známými polohami světel. Výhoda je v rychlejším pořízení fotografií, můžeme si být jistí, že zroje světla jsou skutečně rozmístěny po polokouli a nechybí data z důvodu znepřístupnění oblasti stativem fotoaparátu.
+	
+	%obrázek chybějících odrazů kvůli stativu
+	
+	 Nevýhodou je limitace velikosti objektu.
+	
+\end{enumerate}
+
+%doplnit obrázek!!!!
+
+\section{Postup zpracování}
+
+\section{Zhodnocení metody}
+

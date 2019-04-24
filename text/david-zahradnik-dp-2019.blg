@@ -1,0 +1,12 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: tereza-kulovana-dp-2019.aux
+A level-1 auxiliary file: zkratky.aux
+The style file: mystyle.bst
+A level-1 auxiliary file: prilohy.aux
+Database file #1: literatura.bib
+Illegal end of database file---line 35 of file literatura.bib
+ : }
+ :  
+I'm skipping whatever remains of this entry
+`address' is a missing field, not a string, for entry diveintopython
+while executing---line 1480 of file mystyle.bst
+(There were 2 error messages)

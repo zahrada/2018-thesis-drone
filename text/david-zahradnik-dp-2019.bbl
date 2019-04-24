@@ -1,0 +1,31 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[komise ČÚZK()]{vugtk}
+ČÚZK, Terminologická.
+\newblock \emph{Terminologický slovník zeměměřictví a katastru
+  nemovitostí} [online]. [cit.~2017-05-10].
+\newblock Do\-stup\-n{\'{e}} z: \url{https://www.vugtk.cz/slovnik}.
+
+\bibitem[Pilgrim(2004)]{diveintopython}
+PILGRIM, Mark.
+\newblock \emph{Dive Into Python}.
+\newblock Apress, 2004.
+\newblock ISBN 978-1-59059-356-1.
+
+\bibitem[Švec(2002)]{ucebnicepython}
+ŠVEC, Jan.
+\newblock Učebnice jazyka Python (aneb Létající cirkus), 2002.
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{http://www.root.cz/knihy/ucebnice-jazyka-python/}.
+\newblock Česká verze knihy Python tutorial od Guida van Rossuma a Freda L.
+  Drakea.
+
+\bibitem[zweb:python()]{python}
+\emph{General Python FAQ} [online].
+
+\end{thebibliography}
