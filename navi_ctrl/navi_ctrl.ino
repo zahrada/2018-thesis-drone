@@ -45,6 +45,8 @@ float elapsedTime, timePrev;
 float prevErrorAltitude = 0;
 float pidPAltitude, pidIAltitude, pidDAltitude;
 
+bool landing = false;
+
 void setup() {
 
   mySerial.begin(9600);
@@ -68,7 +70,16 @@ void setup() {
     delay(1000);
     pGround = bmp.readPressure() / 100;
   */
-  time = millis(); //Start counting time in milliseconds
+  /*
+      //set digital pin for reading droneProtocol
+    pinMode(rollPin, INPUT);
+    pinMode(pitchPin, INPUT);
+    pinMode(yawPin, INPUT);
+    pinMode(throttlePin, INPUT);
+    pinMode(kpPin, INPUT);
+    pinMode(kiPin, INPUT);
+    pinMode(kdPin, INPUT);
+  */
 
   Serial.print("We can begin :] ");
 
@@ -80,6 +91,7 @@ void setup() {
         lng = gps.location.lng();
       }
 
+  time = millis(); //Start counting time in milliseconds
 }
 
 void loop() {
@@ -93,9 +105,8 @@ void loop() {
 
   if (Serial.available() > 0)
   {
-    int pAltitude = Serial.parseInt();
-    setAltitude(altitude, pAltitude, throttle, elapsedTime);
 
+    byte rc = Serial.read();
     Serial.print("throtle - ");
     Serial.println(throttle);
 
@@ -172,4 +183,69 @@ static  float minMax(float value, float min_value, float max_value) {
     value = min_value;
   }
   return value;
+}
+
+
+static void readObstacleControl(HardwareSerial Serial, float &altitude, bool landing) {
+  //read data from obstacle control and change navigation of drone
+  // if Serial reads value 0-4 obstacle is near by drone
+
+  /*
+                   2
+               /\     /\
+               ||     ||
+             dist1  dist2
+                1    2
+
+    1  < - dist6 6  (dist7)  3  dist3 ->  3
+                   0
+                5    4
+             dist5  dist4
+               ||     ||
+               \/     \/
+                   4
+  */
+
+  if (Serial.available() > 0)
+  {
+    byte rc = Serial.read();
+
+    switch (rc) {
+      case 0:
+        if (!landing) {
+          altitude += 1;
+        }
+        break;
+      case 1:
+        altitude += 1;
+        break;
+      case 2:
+        altitude += 1;
+        break;
+      case 3:
+        altitude += 1;
+        break;
+      case 4:
+        altitude += 1;
+        break;
+      default:
+        altitude += 1;
+        break;
+    }
+  }
+}
+
+static void sendData2FlyCtrl(SoftwareSerial mySerial, float pitch, float roll, float yaw, int throttle) {
+  // send data to flying conroler by UART
+  // x - break the reading while loop
+  
+  mySerial.print("p");
+  mySerial.print(pitch);
+  mySerial.print("r");
+  mySerial.print(roll);
+  mySerial.print("y");
+  mySerial.print(yaw);
+  mySerial.print("t");
+  mySerial.print(throttle);
+  mySerial.print("x");
 }
