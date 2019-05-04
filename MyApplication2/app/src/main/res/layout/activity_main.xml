@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textWiewMainActiv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/bluebutton"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/button_bluetooth" />
+
+    <ImageView
+        android:id="@+id/imageArduino"
+        android:layout_width="160dp"
+        android:layout_height="80dp"
+        android:background="@color/colorPicture"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/textWiewMainActiv"/>
+
+    <TextView
+        android:id="@+id/textInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_below="@+id/imageArduino"/>
+
+
+    <ListView
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bondedDevices"
+        android:layout_below="@+id/switch1"/>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manual / Autonom Control "
+        android:layout_below="@id/textInfo"
+        android:layout_centerHorizontal="true"
+        android:textOff="Manual"
+        android:textOn="Autonom"/>
+
+
+</RelativeLayout>

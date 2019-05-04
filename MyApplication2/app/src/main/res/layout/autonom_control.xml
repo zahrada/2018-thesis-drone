@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <Button
+        android:text="BACK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:id="@+id/backButtonAut"/>
+
+    <EditText
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:hint="Type Latitude"
+        android:layout_below="@+id/dataLog"
+        android:id="@+id/dataLat"/>
+
+    <EditText
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:hint="Type Longitude"
+
+        android:id="@+id/dataLog"/>
+
+    <com.google.android.gms.maps.MapView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/mapAuto"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_below="@id/dataLat" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/sendButton"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:text="Home"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/homeButton"
+        android:layout_toRightOf="@id/dataLat"
+        android:layout_below="@+id/dataLog"
+        android:text="Send"/>
+
+</RelativeLayout>
