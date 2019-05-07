@@ -1,12 +1,44 @@
 \chapter{Testování}
 \label{6-testovani}
 
-\section{IMU filtry}
-Pro použítí ovládání drona byly uvažovány dvy filtry Mahonyho a komplementární. Jednotlivé filtry byly testovány, jak obrazově tak i numericky.\\
+\section{Letový kontrolér}
+Testování algoritmu letového kontorléru bylo prováněno na vyrobené konstrukci. Konstrukce se skládá ze čtyř latěk, které tvoří rám. Uprostřed je upevněná kovová trubka, na které se pohybuje dron. Dron je pevně připevněn k trubce tak, aby pohyboval po obvodu trubky. Na stranách trubky jsou umístěny molitanové pruhy kvůli tlumení nárazu stojánku dronu. Konstukcí je docíleno simulování stavu letu s jedním stupněm volnosti. \\
+Na konstrukci byla prováděna kalibrace PID regulátoru pro úhly pitch a roll. Kalibrace byla úspěšná při dostažení stabilizace dronu na trubce. Kalibrace byla prováděna pro úhel pitch, výsledky kalibrace se použijí i pro úhel roll.\\
+Prvně byl zjištován koeficient pro proporcionální složku. Koeficient bal navyšován do doby, než výkon vrtule dokázal dronu srovnat z nakloněné polohy do vodorovné. Derivační koeficient byl zvyšován do doby, kdy PID regulátor dokázal dronu stabilizovat ve vodorovné poloze. Integrační koeficient pouze doladil průběh PID regulátoru.\\
+
+\subsection{IMU filtry}
+Pro použítí ovládání dronu byly uvažovány dva filtry Mahonyho a komplementární. Jednotlivé filtry byly testovány, jak obrazově tak i numericky.\\
 Obrazově byla testována reakce na pohyb a ustálení polohy.
 Po reakční stránce a ustálení  polohy byl lepší komplementární filtr. Vzhledem k jednoduchosti filtru, reakční doba IMU jednotky je minimální. Výsledky jsou patrné z grafů.\\
 Numericky byl testován rozptyl střední hodnoty. Byla použita data po ustálení polohy v časovém intervalu čtyř minut. Výsledky byly rovnocené, oba filtry měli rozptyl střední hodnoty v řádek setin stupně.\\
-Pro ovládání drona je potřebná rychlá reakce IMU, proto byl použit komplementární filtr.\\
+Pro ovládání dronu je potřebná rychlá reakce IMU, proto byl použit komplementární filtr.\\
+
+\begin{tabbing}
+%	\caption {Komplementární filtr}
+	uhel ~~~ \= hodnota ~ \= roztyl ~
+	\= 34 \kill
+	\bfseries Úhel \>
+	\bfseries Hodnota \>
+	\bfseries Rozptyl \\
+	roll \> -0.730$^\circ$ \> 0.015$^\circ$  \\
+	roll \> 0.6390$^\circ$ \> 0.0030$^\circ$ \\
+	pitch \> -0.667$^\circ$ \> 0.014$^\circ$  \\
+	pitch \> 0.6880$^\circ$ \> 0.0030$^\circ$  \\
+\end{tabbing}
+
+\begin{tabbing}
+	%	\caption {Mahonyho filtr}
+	uhel ~~~ \= hodnota ~ \= roztyl ~
+	\= 34 \kill
+	\bfseries Úhel \>
+	\bfseries Hodnota \>
+	\bfseries Rozptyl \\
+	roll \> -0.739$^\circ$ \> 0.015$^\circ$  \\
+	roll \> 0.7054 $^\circ$ \> 0.0030$^\circ$ \\
+	pitch \> -0.716 $^\circ$ \> 0.013$^\circ$  \\
+	pitch \> 0.7132 $^\circ$ \> 0.0030$^\circ$  \\
+\end{tabbing}
+
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=14cm]{pictures/testRoll}
@@ -19,14 +51,15 @@ Pro ovládání drona je potřebná rychlá reakce IMU, proto byl použit komple
 	\caption{Náklon IMU jednotky}
 \end{figure}
 
-\section{Létající kontrolér}
-Testování algoritmu létajícího kontorléru bylo prováněno na vyrobené konstrukci. Konstrukce se skládá ze čtyř latěk, které tvoří rám. Uprostřed je upevněná kovová trubka, na které se pohybuje dron. Dron je pevně připevněn k trubce tak, aby pohyboval po obvodu trubky. Na stranách trubky jsou umístěny molitanové pruhy kvůli tlumení nárazu stojánku drona. Konstukcí je docíleno simulování stavu letu s jedním stupněm volnosti. \\
-Na konstrukci byla prováděna kalibrace PID regulátoru pro úhly pitch a roll. Kalibrace byla úspěšná při dostažení stabilizace drona na trubce. Kalibrace byla prováděna pro úhel pitch, výsledky kalibrace se použijí i pro úhel roll.\\
-Prvně byl zjištován koeficient pro proporcionální složku. Koeficient bal navyšován do doby, než výkon vrtule dokázal drona srovnat z nakloněné polohy do vodorovné. Derivační koeficient byl zvyšován do doby, kdy PD regulátor dokázal drona stabilizovat ve vodorovné poloze. Integrační koeficient pouze doladil průběh PID regulátoru.\\
-
-
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=10cm]{pictures/pidtest.jpg}
 	\caption{Testování v konstrukci}
 \end{figure}
+
+\section{Překážový kontrolér}
+Testovány byly jak laserové dálkoměry, tak komunikace mezi kontrolery. U laserových dálkoměrů byla ověřena přesnost měření a dosah. Překážkový kontrolér tedy dokáže upozornit o existující překážce ve vzálenosti 120 cm od konce ramena. Čas mezi jednotlivými měřením je menší než 1 ms.\\
+
+\section{Navigační kontrolér}
+Navigační kontrolér je ve fázi vývoje, proto nebyl testován.\\
+

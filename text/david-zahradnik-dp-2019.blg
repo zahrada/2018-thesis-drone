@@ -1,4 +1,5 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: david-zahradnik-dp-2019.aux
+A level-1 auxiliary file: 0-uvod.aux
 A level-1 auxiliary file: 1-reserse.aux
 A level-1 auxiliary file: 2-teorie.aux
 A level-1 auxiliary file: 3-soucastky.aux
@@ -11,10 +12,27 @@ A level-1 auxiliary file: zkratky.aux
 The style file: mystyle.bst
 A level-1 auxiliary file: prilohy.aux
 Database file #1: literatura.bib
-Illegal end of database file---line 35 of file literatura.bib
- : }
- :  
+You're missing a field name---line 7 of file literatura.bib
+ : 
+ : %  title= {Dive Into Python},
+(Error may have been on previous line)
 I'm skipping whatever remains of this entry
+You're missing a field name---line 15 of file literatura.bib
+ : 
+ : %  title  = {Učebnice jazyka Python (aneb Létající cirkus)},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author, editor, or key in diveintopython
+Warning--to sort, need author or key in ucebnicepython
+Warning--empty author and editor in diveintopython
+Warning--empty title in diveintopython
 `address' is a missing field, not a string, for entry diveintopython
 while executing---line 1480 of file mystyle.bst
-(There were 2 error messages)
+`publisher' is a missing field, not a string, for entry diveintopython
+while executing---line 1480 of file mystyle.bst
+Warning--empty publisher in diveintopython
+Warning--empty year in diveintopython
+Warning--empty year in diveintopython
+Warning--empty title in ucebnicepython
+Warning--empty year in ucebnicepython
+(There were 4 error messages)

@@ -1,10 +1,14 @@
 \chapter{Úvod}
 \label{0-uvod}
 
-Bezpilotní letadla neboli drony jsou rychle vyvýjeným odvětvím v zeměměřičtsví. Nedostatek kvalitní pracovní síli nahrává automatizaci sběru dat, tedy dronům a skenerům.\\
-V dnešní době dron plní funkci nosiče fotogrametrické kamery nebo skeneru. Výužívají se tedy pro sběr objemných dat za velmi krátkou dobu. Výsledky po zpracování jsou ortofota, fotoplány, mračna bodů a z nich 3D modely.\\
-V této diplomové práci je popisován stavba drona na otevřené platformě Aurduino, který by mohl nahradit výtyčku při různých zeměměřičských pracích.\\
-Pokud by se na drona implementovala GNSS aparatura s RTK, dal by se dron využít pro vytyčování. Po zadání souřadnic uživatelem, dron by přeletěl na zadané místo a přistál by. Po příchodu uživatele by dron vzletěl, držel by pozici a uživatel by podle laserové stopy stabilizoval bod.\\
-Dále by šlo vytvořit zařízení které by se skládalo z hranolu, podle kterého by dron udržoval polohu nad zařízením. Využití by se našlo v oblastech nepříznivých po GNSS (vysokýmé objekty: stromy, budovy). Dron s GNSS aparaturou by létal nad vysokými objekty s ideální konfigurací satalitů a uživatel se zařízením by na zemi měřil polohu přes GNSS. Výška drona by se měřila přes laserový dálkoměr.\\
-Pokud by dron dokázal komunikavat s totální stanicí, získali bychom přesné souřadnice letu drona, které by se dali použít pro přesného definování letu. Využití by se našlo při mapování skal. Nápad propojit totální stanici s dronem napadl doktora Horu z firmy Exact. s.r.o.\\
-Pro rozvinutí těchto projektů je potřeba znát problematika letu drona, proto se diplomová práce zabývá základní stavbou drona.\\
+
+Bezpilotní letadla neboli drony jsou rychle vyvíjeným odvětvím v zeměměřičství. Nedostatek kvalitní pracovní síly nahrává automatizaci sběru dat, tedy dronům a skenerům.\\
+V dnešní době dron plní funkci nosiče fotogrammetrické kamery nebo skeneru. Využívá se pro sběr objemných dat za velmi krátkou dobu. Výsledky po zpracování jsou ortofota, fotoplány, mračna bodů a z nich 3D modely.\\
+V této diplomové práci je popisována stavba dronu na platformě Aurduino, který by mohl nahradit výtyčku při různých zeměměřičských pracích.\\
+Pokud by se na dron implementovala GNSS aparatura s podporou RTK, dal by se dron využít pro vytyčování. Po zadání souřadnic uživatelem, dron by přeletěl na zadané místo a přistál by. Po příchodu uživatele by dron vzletěl, držel by pozici zadaných souřadnic a uživatel by, podle laserové stopy, stabilizoval bod.\\
+Po připevnění laserového dálkoměru na dron a implementaci automatického cílení dle hranolu drženého uživatelem, by dron držel pozici nad hranolem. Využití by se našlo v nepříznivých oblastech pro GNSS aparatury (vysoké objekty: stromy, budovy). Dron s GNSS aparaturou by létal nad vysokými objekty s ideální konfigurací satelitů a uživatel by s hranolem na zemi měřil polohu přes GNSS na dronu.\\
+Pokud by dron dokázal komunikovat s totální stanicí, získali bychom přesné souřadnice letu dronu, které by se dali použít pro přesné definování letové dráhy. Využití by se našlo při měření skal, mostů a sloupů.\\
+Pro uskutečnění nápadů je potřeba znát problematika letu dronu, proto se diplomová práce zabývá stavbou drona.\\
+V práci se čtenář dozví o teorii letu dronů, použitých komponent pro stavbu a následném sestavování.\\
+
+%V úvodu práce se čtenář dozví něco málo o teorii létání dronů. V následující kapitole jsou uvedeny komponenty a jejich popis. V kapitole Konstrukce jsou prvně vysvětleny dílčí kroky a následně celkový přehled o propojení komponent a popis algoritmu, který ovládá dron. Pro ovládání byla vytvořena aplikace pro mobilní operační systém Android, její uživatelský manuál je popsán v Ovládání.\\

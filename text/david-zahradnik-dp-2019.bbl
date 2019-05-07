@@ -1,9 +1,15 @@
-\begin{thebibliography}{4}
+\begin{thebibliography}{35}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[div()]{diveintopython}
+
+
+\bibitem[uce()]{ucebnicepython}
+
 
 \bibitem[komise ČÚZK()]{vugtk}
 ČÚZK, Terminologická.
@@ -11,21 +17,184 @@
   nemovitostí} [online]. [cit.~2017-05-10].
 \newblock Do\-stup\-n{\'{e}} z: \url{https://www.vugtk.cz/slovnik}.
 
-\bibitem[Pilgrim(2004)]{diveintopython}
-PILGRIM, Mark.
-\newblock \emph{Dive Into Python}.
-\newblock Apress, 2004.
-\newblock ISBN 978-1-59059-356-1.
+\bibitem[zweb:android()]{android}
+\emph{Android Developers. Android Developers} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z: \url{https://developer.android.com/}.
 
-\bibitem[Švec(2002)]{ucebnicepython}
-ŠVEC, Jan.
-\newblock Učebnice jazyka Python (aneb Létající cirkus), 2002.
+\bibitem[zweb:ardu()]{ardu}
+\emph{Arduino - Home. Arduino - Home} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z: \url{https://www.arduino.cc/}.
+
+\bibitem[zweb:baterie()]{baterie}
+\emph{GENS ACE LIPO TATTU serie - 6750 mAh 14,8V 4S1P (25C)} [online].
+  [cit.~2019-05-05].
 \newblock Do\-stup\-n{\'{e}} z:
-  \url{http://www.root.cz/knihy/ucebnice-jazyka-python/}.
-\newblock Česká verze knihy Python tutorial od Guida van Rossuma a Freda L.
-  Drakea.
+  \url{https://www.peckamodel.cz/ta-25c-6750-4s1p-gens-ace-lipo-tattu-serie-4s-6750-mah-25c}.
 
-\bibitem[zweb:python()]{python}
-\emph{General Python FAQ} [online].
+\bibitem[zweb:blheli()]{blheli}
+\emph{BLHeli/BLHeli_32 ARM at master · bitdump/BLHeli · GitHub} [online].
+  Copyright © 2019. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://github.com/bitdump/BLHeli/tree/master/BLHeli_32%20ARM}.
+
+\bibitem[zweb:bpm()]{bpm}
+\emph{GitHub - adafruit/Adafruit_BMP280_Library: Arduino Library for BMP280
+  sensors.} [online]. Copyright © 2019. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://github.com/adafruit/Adafruit_BMP280_Library}.
+
+\bibitem[zweb:codemitch()]{codemitch}
+\emph{CodingWithMitch.com. CodingWithMitch.com} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z: \url{https://codingwithmitch.com/}.
+
+\bibitem[zweb:comregul()]{comregul}
+\emph{Youtube channel: Joshua Bardwell} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.youtube.com/channel/UCX3eufnI7A2I7IkKHZn8KSQ}.
+
+\bibitem[zweb:dataatmel()]{dataatmel}
+\emph{ATmega48P/88P/168P/328P datasheet} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.sparkfun.com/datasheets/Components/SMD/ATMega328.pdf}.
+
+\bibitem[zweb:diffdrone()]{diffdrone}
+\emph{Design, Build and Improve a Quadcopter} [online]. Copyright ©.
+  [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.instructables.com/id/Design-Build-and-Improve-a-Quadcopter}.
+
+\bibitem[zweb:electronoobs()]{electronoobs}
+\emph{ELECTRONOOBS - Electronics tutorials, Arduino, basic circuits, 3D
+  printing, robotics. ELECTRONOOBS - Electronics tutorials, Arduino, basic
+  circuits, 3D printing, robotics} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z: \url{http://www.electronoobs.com}.
+
+\bibitem[zweb:esc()]{esc}
+\emph{HGLRC BS30A} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.rotorama.cz/regulatory/hglrc-bs30a}.
+
+\bibitem[zweb:hacksterpid()]{hacksterpid}
+\emph{Drone Basics - PID - Hackster.io. Hackster.io - The community dedicated
+  to learning hardware} [online]. Copyright ©. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.hackster.io/ElvisWolcott/drone-basics-pid-83da06}.
+
+\bibitem[zweb:imu()]{imu}
+\emph{MEMS Accelerometer Gyroscope Magnetometer & Arduino. How To Mechatronics}
+  [online]. Copyright © 2019 HowToMechatronics.com. All rights reserved.
+  [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://howtomechatronics.com/how-it-works/electrical-engineering/mems-accelerometer-gyrocope-magnetometer-arduino}.
+
+\bibitem[zweb:joystick()]{joystick}
+\emph{GitHub - controlwear/virtual-joystick-android: This library provides a
+  very simple and ready-to-use custom view which emulates a joystick for
+  Android} [online]. Copyright © 2019. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://github.com/controlwear/virtual-joystick-android}.
+
+\bibitem[zweb:kv()]{kv}
+\emph{Brushless Motor Kv Constant Explained • LearningRC. Learning RC •
+  Knowledge and Information for the RC Community} [online]. Copyright © 2019.
+  [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z: \url{http://learningrc.com/motor-kv/}.
+
+\bibitem[zweb:laser()]{laser}
+\emph{GitHub - pololu/vl53l0x-arduino: Pololu Arduino library for VL53L0X
+  time-of-flight distance sensor} [online]. Copyright © 2019.
+  [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://github.com/pololu/vl53l0x-arduino}.
+
+\bibitem[zweb:learnengineering()]{learnengineering}
+\emph{Learn Engineering} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.youtube.com/channel/UCqZQJ4600a9wIfMPbYc60OQ}.
+
+\bibitem[zweb:mahony()]{mahony}
+\emph{GitHub - PaulStoffregen/MahonyAHRS} [online]. Copyright © 2019.
+  [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://github.com/PaulStoffregen/MahonyAHRS}.
+
+\bibitem[zweb:mikrokopter()]{mikrokopter}
+\emph{MikrokopterWiki. StartSeite - MikrokopterWiki} [online].
+  [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z: \url{http://wiki.mikrokopter.de/en}.
+
+\bibitem[zweb:motor()]{motor}
+\emph{MK3640/34 5mm} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.mikrocontroller.com/index.php?main_page=product_info&cPath=73&products_id=887&zenid=e5f2c8d548f2a39747a4ed06d306a37f}.
+
+\bibitem[zweb:mpu9250()]{mpu9250}
+\emph{MPU-9250 Product Specification Revision 1.1} [online]. Copyright ©.
+  [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.invensense.com/wp-content/uploads/2015/02/PS-MPU-9250A-01-v1.1.pdf}.
+
+\bibitem[zweb:multiwii()]{multiwii}
+\emph{Multiwii} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z: \url{http://www.multiwii.com}.
+
+\bibitem[zweb:mydronelab()]{mydronelab}
+\emph{How to Build Arduino Quadcopter Drone: Step-by-Step DIY Project.
+  MyDroneLab: Best Drones For Sale, Expert Reviews and Guides} [online].
+  Copyright © MyDroneLab. All rights reserved. Reproduction of any portion of
+  this website only at the permission of MyDroneLab. The information provided
+  on this site is for educational use only. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{http://mydronelab.com/blog/arduino-quadcopter.html}.
+
+\bibitem[zweb:pdb()]{pdb}
+\emph{Matek PDB s 5V 12V | Rotorama. Rotorama - Závodní drony} [online].
+  [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.rotorama.cz/prislusenstvi/matek-pdb-s-5v-12v}.
+
+\bibitem[zweb:physicdrone()]{physicdrone}
+\emph{The Physics of How Drones Fly | WIRED. WIRED} [online]. Copyright © 2018
+  Condé Nast. All rights reserved. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.wired.com/2017/05/the-physics-of-drones/}.
+
+\bibitem[zweb:pid()]{pid}
+\emph{Plynulá regulace PID. Regulace od Jardy} [online]. Copyright © 2000.
+  [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://valter.byl.cz/plynula-regulace-pid}.
+
+\bibitem[zweb:pwm()]{pwm}
+\emph{Picture Pulse With Modulation} [online]. Copyright © 2019.
+  [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{http://1oomzzme3s617r8yzr8qutjk-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/Fig-1-pwm.gif}.
+
+\bibitem[zweb:rotdrone()]{rotdrone}
+\emph{Picture of rotation angles} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://devusa.djicdn.com/images/flightController-concepts/altitude-7e757661b6.png}.
+
+\bibitem[zweb:siieefpv()]{siieefpv}
+\emph{SiieeFPV} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.youtube.com/channel/UCbZ81vU3NT_Wp3hijL57ecg}.
+
+\bibitem[zweb:xbee()]{xbee}
+\emph{UK Distributor of Sparkfun, Arduino, BBC Micro Bit, Adafruit - Proto-PIC}
+  [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z:
+  \url{https://www.proto-pic.co.uk/user/products/large/08665-03-L__99538__33841.jpg}.
+
+\bibitem[zweb:xbeetut()]{xbeetut}
+\emph{XBee S2 Quick Reference Guide/Cheat Sheet and Video Tutorials to Getting
+  Started - TunnelsUP. TunnelsUp - Tools and Information for Network Engineers}
+  [online]. Copyright © 2019. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z: \url{https://www.tunnelsup.com/xbee-guide/}.
+
+\bibitem[zweb:ymfc()]{ymfc}
+\emph{Projekt YMFC} [online]. [cit.~2019-05-05].
+\newblock Do\-stup\-n{\'{e}} z: \url{http://www.brokking.net}.
 
 \end{thebibliography}
