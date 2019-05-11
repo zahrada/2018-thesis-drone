@@ -1,68 +1,53 @@
 \babel@toc {english}{}
-\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{12}{chapter.4}% 
-\contentsline {chapter}{\numberline {2}Re\IeC {\v s}er\IeC {\v s}e}{13}{chapter.5}% 
-\contentsline {chapter}{\numberline {3}Teorie}{14}{chapter.6}% 
+\contentsline {chapter}{\numberline {1}\IeC {\'U}vod}{11}{chapter.4}% 
+\contentsline {chapter}{\numberline {2}Re\IeC {\v s}er\IeC {\v s}e}{12}{chapter.5}% 
+\contentsline {chapter}{\numberline {3}Teorie}{13}{chapter.6}% 
 \contentsline {chapter}{\numberline {4}Komponenty}{16}{chapter.10}% 
 \contentsline {section}{\numberline {4.1}Kostra}{16}{section.11}% 
 \contentsline {section}{\numberline {4.2}Baterie}{16}{section.12}% 
-\contentsline {subsection}{\numberline {4.2.1}Parametry pou\IeC {\v z}it\IeC {\'e} baterie}{17}{subsection.13}% 
-\contentsline {subsection}{\numberline {4.2.2}Rady pro zach\IeC {\'a}zen\IeC {\'\i } s LiPo bateriemi}{17}{subsection.14}% 
-\contentsline {section}{\numberline {4.3}Distribu\IeC {\v c}n\IeC {\'\i } deska}{17}{section.15}% 
-\contentsline {subsection}{\numberline {4.3.1}Parametry distribu\IeC {\v c}n\IeC {\'\i } desky}{17}{subsection.16}% 
-\contentsline {section}{\numberline {4.4}Vrtule}{18}{section.18}% 
-\contentsline {subsection}{\numberline {4.4.1}Parametry pou\IeC {\v z}it\IeC {\'y}ch vrtul\IeC {\'\i }}{18}{subsection.19}% 
-\contentsline {section}{\numberline {4.5}Bezkart\IeC {\'a}\IeC {\v c}ov\IeC {\'e} motory}{18}{section.20}% 
-\contentsline {subsection}{\numberline {4.5.1}Parametry pou\IeC {\v z}it\IeC {\'y}ch motor\IeC {\r u}}{19}{subsection.21}% 
-\contentsline {section}{\numberline {4.6}Regul\IeC {\'a}tory ot\IeC {\'a}\IeC {\v c}ek}{19}{section.22}% 
-\contentsline {subsection}{\numberline {4.6.1}Parametry pou\IeC {\v z}it\IeC {\'y}ch regul\IeC {\'a}tor\IeC {\r u} ot\IeC {\'a}\IeC {\v c}ek}{19}{subsection.23}% 
-\contentsline {section}{\numberline {4.7}IMU}{20}{section.26}% 
-\contentsline {subsection}{\numberline {4.7.1}Akcelerometr}{20}{subsection.27}% 
-\contentsline {subsection}{\numberline {4.7.2}Gyroskop}{21}{subsection.28}% 
-\contentsline {subsection}{\numberline {4.7.3}Magnetometr}{21}{subsection.29}% 
-\contentsline {subsection}{\numberline {4.7.4}Parametry pou\IeC {\v z}it\IeC {\'e} IMU jednotky}{21}{subsection.30}% 
-\contentsline {section}{\numberline {4.8}Komunika\IeC {\v c}n\IeC {\'\i } za\IeC {\v r}\IeC {\'\i }zen\IeC {\'\i }}{22}{section.32}% 
-\contentsline {subsection}{\numberline {4.8.1}Radio}{22}{subsection.33}% 
-\contentsline {subsection}{\numberline {4.8.2}Parametry pou\IeC {\v z}it\IeC {\'e}ho Radiov\IeC {\'e}ho za\IeC {\v r}\IeC {\'\i }zen\IeC {\'\i }}{22}{subsection.34}% 
-\contentsline {subsection}{\numberline {4.8.3}Bluetooth}{22}{subsection.36}% 
-\contentsline {subsection}{\numberline {4.8.4}Parametry pou\IeC {\v z}it\IeC {\'e}ho Bluetooth za\IeC {\v r}\IeC {\'\i }zen\IeC {\'\i }}{23}{subsection.37}% 
-\contentsline {section}{\numberline {4.9}\IeC {\v R}\IeC {\'\i }d\IeC {\'\i }c\IeC {\'\i } jednotka}{23}{section.39}% 
-\contentsline {subsection}{\numberline {4.9.1}Arduino}{23}{subsection.40}% 
-\contentsline {section}{\numberline {4.10}GNSS}{24}{section.42}% 
-\contentsline {section}{\numberline {4.11}V\IeC {\'y}\IeC {\v s}kom\IeC {\v e}r}{24}{section.43}% 
-\contentsline {subsection}{\numberline {4.11.1}Barometr}{24}{subsection.44}% 
-\contentsline {subsection}{\numberline {4.11.2}Pou\IeC {\v z}it\IeC {\'y} barometr}{24}{subsection.45}% 
-\contentsline {section}{\numberline {4.12}Laserov\IeC {\'y} d\IeC {\'a}lkom\IeC {\v e}r}{25}{section.47}% 
-\contentsline {subsection}{\numberline {4.12.1}Pou\IeC {\v z}\IeC {\'\i }ty laserov\IeC {\'y} modul}{25}{subsection.48}% 
-\contentsline {section}{\numberline {4.13}Kamera}{26}{section.50}% 
-\contentsline {subsection}{\numberline {4.13.1}Pou\IeC {\v z}\IeC {\'\i }t\IeC {\'a} kamera}{26}{subsection.51}% 
-\contentsline {chapter}{\numberline {5}Konstrukce}{27}{chapter.53}% 
-\contentsline {section}{\numberline {5.1}Ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } ESC (regul\IeC {\'a}tor\IeC {\r u} ot\IeC {\'a}\IeC {\v c}ek)}{27}{section.54}% 
-\contentsline {section}{\numberline {5.2}Kalibrace regul\IeC {\'a}tor\IeC {\r u} ot\IeC {\'a}\IeC {\v c}ek}{28}{section.56}% 
-\contentsline {section}{\numberline {5.3}Filtrace dat IMU}{29}{section.61}% 
-\contentsline {subsection}{\numberline {5.3.1}Komplement\IeC {\'a}rn\IeC {\'\i } filtr}{29}{subsection.62}% 
-\contentsline {subsection}{\numberline {5.3.2}Kalman\IeC {\r u}v filtr}{30}{subsection.63}% 
-\contentsline {subsection}{\numberline {5.3.3}Mahonyho filtr}{30}{subsection.64}% 
-\contentsline {section}{\numberline {5.4}PID regul\IeC {\'a}tor pro synchornizaci motor\IeC {\r u}}{30}{section.65}% 
-\contentsline {section}{\numberline {5.5}Komunika\IeC {\v c}n\IeC {\'\i } protokol}{33}{section.69}% 
-\contentsline {section}{\numberline {5.6}Radiov\IeC {\'a} komunikace XBEE}{34}{section.70}% 
-\contentsline {section}{\numberline {5.7}Letov\IeC {\'y} kontrol\IeC {\'e}r}{36}{section.72}% 
-\contentsline {section}{\numberline {5.8}P\IeC {\v r}ek\IeC {\'a}\IeC {\v z}kov\IeC {\'y} kontrol\IeC {\'e}r}{37}{section.75}% 
-\contentsline {section}{\numberline {5.9}Naviga\IeC {\v c}n\IeC {\'\i } kontrol\IeC {\'e}r}{38}{section.79}% 
-\contentsline {section}{\numberline {5.10}Fin\IeC {\'a}ln\IeC {\'\i } sestaven\IeC {\'\i }}{39}{section.81}% 
-\contentsline {chapter}{\numberline {6}Testov\IeC {\'a}n\IeC {\'\i }}{46}{chapter.85}% 
-\contentsline {section}{\numberline {6.1}Letov\IeC {\'y} kontrol\IeC {\'e}r}{46}{section.86}% 
-\contentsline {subsection}{\numberline {6.1.1}IMU filtry}{46}{subsection.87}% 
-\contentsline {section}{\numberline {6.2}P\IeC {\v r}ek\IeC {\'a}\IeC {\v z}ov\IeC {\'y} kontrol\IeC {\'e}r}{47}{section.91}% 
-\contentsline {section}{\numberline {6.3}Naviga\IeC {\v c}n\IeC {\'\i } kontrol\IeC {\'e}r}{47}{section.92}% 
-\contentsline {chapter}{\numberline {7}Ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }}{49}{chapter.93}% 
-\contentsline {section}{\numberline {7.1}Hlavn\IeC {\'\i } obrazovka}{49}{section.94}% 
-\contentsline {section}{\numberline {7.2}Manu\IeC {\'a}ln\IeC {\'\i } ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }}{50}{section.96}% 
-\contentsline {section}{\numberline {7.3}Autonomn\IeC {\'\i } ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }}{50}{section.99}% 
-\contentsline {section}{\numberline {7.4}Kamera}{50}{section.101}% 
-\contentsline {chapter}{\numberline {8}Z\IeC {\'a}v\IeC {\v e}r}{53}{chapter.103}% 
-\contentsline {chapter}{Seznam zkratek}{55}{section*.104}% 
-\contentsline {chapter}{Literatura}{56}{section*.105}% 
-\contentsline {chapter}{\numberline {A}Dokumentace}{59}{chapter.106}% 
-\contentsline {section}{\numberline {A.1}Flying Control}{59}{section.107}% 
-\contentsline {section}{\numberline {A.2}Obstacle Control}{59}{section.108}% 
-\contentsline {section}{\numberline {A.3}Navi Control}{59}{section.109}% 
+\contentsline {section}{\numberline {4.3}Distribu\IeC {\v c}n\IeC {\'\i } deska}{17}{section.13}% 
+\contentsline {section}{\numberline {4.4}Vrtule}{18}{section.15}% 
+\contentsline {section}{\numberline {4.5}Bezkart\IeC {\'a}\IeC {\v c}ov\IeC {\'e} motory}{18}{section.16}% 
+\contentsline {section}{\numberline {4.6}Regul\IeC {\'a}tory ot\IeC {\'a}\IeC {\v c}ek}{19}{section.17}% 
+\contentsline {section}{\numberline {4.7}IMU}{20}{section.20}% 
+\contentsline {subsection}{\numberline {4.7.1}Akcelerometr}{21}{subsection.21}% 
+\contentsline {subsection}{\numberline {4.7.2}Gyroskop}{21}{subsection.22}% 
+\contentsline {subsection}{\numberline {4.7.3}Magnetometr}{21}{subsection.23}% 
+\contentsline {section}{\numberline {4.8}Komunika\IeC {\v c}n\IeC {\'\i } za\IeC {\v r}\IeC {\'\i }zen\IeC {\'\i }}{22}{section.25}% 
+\contentsline {subsection}{\numberline {4.8.1}Radio}{22}{subsection.26}% 
+\contentsline {subsection}{\numberline {4.8.2}Bluetooth}{23}{subsection.28}% 
+\contentsline {section}{\numberline {4.9}\IeC {\v R}\IeC {\'\i }d\IeC {\'\i }c\IeC {\'\i } jednotka}{23}{section.30}% 
+\contentsline {subsection}{\numberline {4.9.1}Arduino}{24}{subsection.31}% 
+\contentsline {section}{\numberline {4.10}GNSS}{24}{section.33}% 
+\contentsline {section}{\numberline {4.11}V\IeC {\'y}\IeC {\v s}kom\IeC {\v e}r}{24}{section.34}% 
+\contentsline {subsection}{\numberline {4.11.1}Barometr}{25}{subsection.35}% 
+\contentsline {section}{\numberline {4.12}Laserov\IeC {\'y} d\IeC {\'a}lkom\IeC {\v e}r}{25}{section.37}% 
+\contentsline {section}{\numberline {4.13}Kamera}{26}{section.39}% 
+\contentsline {chapter}{\numberline {5}Konstrukce}{28}{chapter.41}% 
+\contentsline {section}{\numberline {5.1}Ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } ESC (regul\IeC {\'a}tor\IeC {\r u} ot\IeC {\'a}\IeC {\v c}ek)}{28}{section.42}% 
+\contentsline {section}{\numberline {5.2}Kalibrace regul\IeC {\'a}tor\IeC {\r u} ot\IeC {\'a}\IeC {\v c}ek}{29}{section.46}% 
+\contentsline {section}{\numberline {5.3}Filtrace dat IMU}{31}{section.50}% 
+\contentsline {subsection}{\numberline {5.3.1}Komplement\IeC {\'a}rn\IeC {\'\i } filtr}{32}{subsection.51}% 
+\contentsline {subsection}{\numberline {5.3.2}Kalman\IeC {\r u}v filtr}{32}{subsection.52}% 
+\contentsline {subsection}{\numberline {5.3.3}Mahonyho filtr}{32}{subsection.53}% 
+\contentsline {section}{\numberline {5.4}PID regul\IeC {\'a}tor pro synchornizaci motor\IeC {\r u}}{32}{section.54}% 
+\contentsline {section}{\numberline {5.5}Komunika\IeC {\v c}n\IeC {\'\i } protokol}{36}{section.58}% 
+\contentsline {section}{\numberline {5.6}Radiov\IeC {\'a} komunikace XBEE}{36}{section.60}% 
+\contentsline {section}{\numberline {5.7}Letov\IeC {\'y} kontrol\IeC {\'e}r}{38}{section.62}% 
+\contentsline {section}{\numberline {5.8}P\IeC {\v r}ek\IeC {\'a}\IeC {\v z}kov\IeC {\'y} kontrol\IeC {\'e}r}{41}{section.65}% 
+\contentsline {section}{\numberline {5.9}Naviga\IeC {\v c}n\IeC {\'\i } kontrol\IeC {\'e}r}{43}{section.70}% 
+\contentsline {section}{\numberline {5.10}Fin\IeC {\'a}ln\IeC {\'\i } sestaven\IeC {\'\i }}{46}{section.72}% 
+\contentsline {chapter}{\numberline {6}Testov\IeC {\'a}n\IeC {\'\i }}{49}{chapter.76}% 
+\contentsline {section}{\numberline {6.1}Letov\IeC {\'y} kontrol\IeC {\'e}r}{49}{section.77}% 
+\contentsline {subsection}{\numberline {6.1.1}IMU filtry}{49}{subsection.78}% 
+\contentsline {section}{\numberline {6.2}P\IeC {\v r}ek\IeC {\'a}\IeC {\v z}ov\IeC {\'y} kontrol\IeC {\'e}r}{51}{section.84}% 
+\contentsline {section}{\numberline {6.3}Naviga\IeC {\v c}n\IeC {\'\i } kontrol\IeC {\'e}r}{52}{section.85}% 
+\contentsline {chapter}{\numberline {7}Ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }}{53}{chapter.86}% 
+\contentsline {section}{\numberline {7.1}Hlavn\IeC {\'\i } obrazovka}{53}{section.87}% 
+\contentsline {section}{\numberline {7.2}Manu\IeC {\'a}ln\IeC {\'\i } ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }}{54}{section.89}% 
+\contentsline {section}{\numberline {7.3}Autonomn\IeC {\'\i } ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }}{55}{section.92}% 
+\contentsline {section}{\numberline {7.4}Kamera}{56}{section.94}% 
+\contentsline {chapter}{\numberline {8}Z\IeC {\'a}v\IeC {\v e}r}{58}{chapter.96}% 
+\contentsline {chapter}{Seznam zkratek}{60}{section*.97}% 
+\contentsline {chapter}{Literatura}{61}{section*.98}% 
+\contentsline {chapter}{\numberline {A}P\IeC {\v r}\IeC {\'\i }lohy}{65}{chapter.99}% 

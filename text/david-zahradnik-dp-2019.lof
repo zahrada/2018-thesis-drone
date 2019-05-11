@@ -1,40 +1,39 @@
 \babel@toc {english}{}
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Let ur\IeC {\v c}it\IeC {\'y}m sm\IeC {\v e}rem(motion-sm\IeC {\v e}r, thrust/drag-tah, weigth-v\IeC {\'a}ha)\relax }}{14}{figure.caption.7}% 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces P\IeC {\v r}ehled vtrul\IeC {\'\i } se CW a CCW orientac\IeC {\'\i }\relax }}{15}{figure.caption.8}% 
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Let ur\IeC {\v c}it\IeC {\'y}m sm\IeC {\v e}rem(motion-sm\IeC {\v e}r, thrust/drag-tah, weigth-v\IeC {\'a}ha)\relax }}{13}{figure.caption.7}% 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces P\IeC {\v r}ehled vtrul\IeC {\'\i } se CW a CCW orientac\IeC {\'\i }\relax }}{14}{figure.caption.8}% 
 \contentsline {figure}{\numberline {3.3}{\ignorespaces \IeC {\'U}hly rotace (Axis - Osa)\relax }}{15}{figure.caption.9}% 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Distribu\IeC {\v c}n\IeC {\'\i } deska - Matek PDB-XT60\relax }}{18}{figure.caption.17}% 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Regul\IeC {\'a}tor ot\IeC {\'a}\IeC {\v c}ek - HGLRC BS30A\relax }}{20}{figure.caption.24}% 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } motoru a regul\IeC {\'a}toru\relax }}{20}{figure.caption.25}% 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces IMU - MPU9250\relax }}{21}{figure.caption.31}% 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces XBee\relax }}{22}{figure.caption.35}% 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Bluetooth - HC-05\relax }}{23}{figure.caption.38}% 
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Arduino UNO a Nano\relax }}{24}{figure.caption.41}% 
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Barometr - BMP280\relax }}{25}{figure.caption.46}% 
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Laserov\IeC {\'y} modul - Vl53l0x\relax }}{25}{figure.caption.49}% 
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Kamera TX02 s p\IeC {\v r}ij\IeC {\'\i }ma\IeC {\v c}em pro smartphone\relax }}{26}{figure.caption.52}% 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Uk\IeC {\'a}zka PWM\relax }}{28}{figure.caption.55}% 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } pro kalibraci regul\IeC {\'a}toru ot\IeC {\'a}\IeC {\v c}ek\relax }}{29}{figure.caption.57}% 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } pro kalibraci regul\IeC {\'a}toru ot\IeC {\'a}\IeC {\v c}ek\relax }}{30}{figure.caption.58}% 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } pro kalibraci regul\IeC {\'a}toru ot\IeC {\'a}\IeC {\v c}ek\relax }}{31}{figure.caption.59}% 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } pro kalibraci regul\IeC {\'a}toru ot\IeC {\'a}\IeC {\v c}ek\relax }}{32}{figure.caption.60}% 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Sch\IeC {\'e}ma PID regul\IeC {\'a}toru\relax }}{33}{figure.caption.66}% 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Sch\IeC {\'e}ma v\IeC {\v s}ech PID regul\IeC {\'a}tor\IeC {\r u} p\IeC {\v r}i stavb\IeC {\v e} dronu\relax }}{34}{figure.caption.67}% 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Sch\IeC {\'e}ma ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } vrtul\IeC {\'\i } podle \IeC {\'u}hlu n\IeC {\'a}klonu\relax }}{35}{figure.caption.68}% 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces XBEE shield\relax }}{36}{figure.caption.71}% 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Diagram algoritmu letov\IeC {\'e}ho kontrol\IeC {\'e}ru\relax }}{40}{figure.caption.73}% 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } letov\IeC {\'e}ho kontrol\IeC {\'e}ru\relax }}{41}{figure.caption.74}% 
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Diagram algoritmu p\IeC {\v r}ek\IeC {\'a}\IeC {\v z}kov\IeC {\'e}ho kontrol\IeC {\'e}ru\relax }}{41}{figure.caption.76}% 
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } P\IeC {\v r}ek\IeC {\'a}\IeC {\v z}kov\IeC {\'e}ho kontrol\IeC {\'e}ru\relax }}{42}{figure.caption.77}% 
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Sch\IeC {\'e}ma zpr\IeC {\'a}v p\IeC {\v r}ek\IeC {\'a}\IeC {\v z}ce\relax }}{42}{figure.caption.78}% 
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Diagram naviga\IeC {\v c}n\IeC {\'\i }ho kontrol\IeC {\'e}ru\relax }}{43}{figure.caption.80}% 
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Diagram komponent\relax }}{44}{figure.caption.82}% 
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } nap\IeC {\'a}jen\IeC {\'\i } motor\IeC {\r u}\relax }}{45}{figure.caption.83}% 
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } nap\IeC {\'a}jen\IeC {\'\i } Arduina a modul\IeC {\r u}\relax }}{45}{figure.caption.84}% 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Inicializace IMU\relax }}{47}{figure.caption.88}% 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces N\IeC {\'a}klon IMU jednotky\relax }}{48}{figure.caption.89}% 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Testov\IeC {\'a}n\IeC {\'\i } v konstrukci\relax }}{48}{figure.caption.90}% 
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Screenshot hlavn\IeC {\'\i } obrazovky\relax }}{49}{figure.caption.95}% 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Schreenshot obrazovky pro manu\IeC {\'a}ln\IeC {\'\i } ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }\relax }}{50}{figure.caption.97}% 
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Diagram RC soustavy\relax }}{51}{figure.caption.98}% 
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Schreenshot obrazovky pro autonomn\IeC {\'\i } ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }\relax }}{51}{figure.caption.100}% 
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Schreenshot aplikace FPViewer\relax }}{52}{figure.caption.102}% 
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Distribu\IeC {\v c}n\IeC {\'\i } deska - Matek PDB-XT60\relax }}{18}{figure.caption.14}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Regul\IeC {\'a}tor ot\IeC {\'a}\IeC {\v c}ek - HGLRC BS30A\relax }}{20}{figure.caption.18}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } motoru a regul\IeC {\'a}toru\relax }}{20}{figure.caption.19}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces IMU - MPU9250\relax }}{22}{figure.caption.24}% 
+\contentsline {figure}{\numberline {4.5}{\ignorespaces XBee\relax }}{23}{figure.caption.27}% 
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Bluetooth - HC-05\relax }}{23}{figure.caption.29}% 
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Arduino UNO a Nano\relax }}{24}{figure.caption.32}% 
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Barometr - BMP280\relax }}{25}{figure.caption.36}% 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Laserov\IeC {\'y} modul - Vl53l0x\relax }}{26}{figure.caption.38}% 
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Kamera TX02 s p\IeC {\v r}ij\IeC {\'\i }ma\IeC {\v c}em pro smartphone\relax }}{27}{figure.caption.40}% 
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Uk\IeC {\'a}zka PWM\relax }}{29}{figure.caption.45}% 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } pro kalibraci regul\IeC {\'a}toru ot\IeC {\'a}\IeC {\v c}ek\relax }}{30}{figure.caption.47}% 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Uk\IeC {\'a}zka kalibrace v programu HLBeliSuite p\IeC {\v r}ed kalibrac\IeC {\'\i }\relax }}{31}{figure.caption.48}% 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Uk\IeC {\'a}zka kalibrace v programu HLBeliSuite po kalibraci\relax }}{31}{figure.caption.49}% 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Sch\IeC {\'e}ma PID regul\IeC {\'a}toru\relax }}{34}{figure.caption.55}% 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Sch\IeC {\'e}ma v\IeC {\v s}ech PID regul\IeC {\'a}tor\IeC {\r u} p\IeC {\v r}i stavb\IeC {\v e} dronu\relax }}{35}{figure.caption.56}% 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Sch\IeC {\'e}ma ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i } vrtul\IeC {\'\i } podle \IeC {\'u}hlu n\IeC {\'a}klonu\relax }}{35}{figure.caption.57}% 
+\contentsline {figure}{\numberline {5.8}{\ignorespaces XBEE shield\relax }}{37}{figure.caption.61}% 
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Diagram algoritmu letov\IeC {\'e}ho kontrol\IeC {\'e}ru\relax }}{40}{figure.caption.63}% 
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } letov\IeC {\'e}ho kontrol\IeC {\'e}ru\relax }}{41}{figure.caption.64}% 
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Diagram algoritmu p\IeC {\v r}ek\IeC {\'a}\IeC {\v z}kov\IeC {\'e}ho kontrol\IeC {\'e}ru\relax }}{42}{figure.caption.66}% 
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } P\IeC {\v r}ek\IeC {\'a}\IeC {\v z}kov\IeC {\'e}ho kontrol\IeC {\'e}ru\relax }}{42}{figure.caption.67}% 
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Sch\IeC {\'e}ma zpr\IeC {\'a}v o p\IeC {\v r}ek\IeC {\'a}\IeC {\v z}ce\relax }}{43}{figure.caption.68}% 
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Diagram naviga\IeC {\v c}n\IeC {\'\i }ho kontrol\IeC {\'e}ru\relax }}{45}{figure.caption.71}% 
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Diagram komponent\relax }}{47}{figure.caption.73}% 
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } nap\IeC {\'a}jen\IeC {\'\i } motor\IeC {\r u}\relax }}{48}{figure.caption.74}% 
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Sch\IeC {\'e}ma zapojen\IeC {\'\i } nap\IeC {\'a}jen\IeC {\'\i } Arduina a modul\IeC {\r u}\relax }}{48}{figure.caption.75}% 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Inicializace IMU\relax }}{50}{figure.caption.81}% 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces N\IeC {\'a}klon IMU jednotky\relax }}{51}{figure.caption.82}% 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Testov\IeC {\'a}n\IeC {\'\i } v konstrukci\relax }}{51}{figure.caption.83}% 
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Screenshot hlavn\IeC {\'\i } obrazovky\relax }}{53}{figure.caption.88}% 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Schreenshot obrazovky pro manu\IeC {\'a}ln\IeC {\'\i } ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }\relax }}{54}{figure.caption.90}% 
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Diagram RC soustavy\relax }}{55}{figure.caption.91}% 
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Schreenshot obrazovky pro autonomn\IeC {\'\i } ovl\IeC {\'a}d\IeC {\'a}n\IeC {\'\i }\relax }}{56}{figure.caption.93}% 
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Schreenshot aplikace FPViewer\relax }}{57}{figure.caption.95}% 
