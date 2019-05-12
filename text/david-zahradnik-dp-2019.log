@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.7)  11 MAY 2019 16:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.7)  11 MAY 2019 18:26
 entering extended mode
 **./david-zahradnik-dp-2019.tex
 (david-zahradnik-dp-2019.tex
@@ -775,7 +775,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 5--12
  []
 
 )
-<pictures/logo2.pdf, id=420, 642.4pt x 484.209pt>
+<pictures/logo2.pdf, id=422, 642.4pt x 484.209pt>
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 198.
@@ -823,12 +823,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 4--7
 
  []
 
-<pictures/dronfly.jpg, id=443, 473.77pt x 336.25626pt>
+<pictures/dronfly.jpg, id=445, 473.77pt x 336.25626pt>
 File: pictures/dronfly.jpg Graphic file (type jpg)
 <use pictures/dronfly.jpg>
 Package pdftex.def Info: pictures/dronfly.jpg  used on input line 10.
 (pdftex.def)             Requested size: 199.16928pt x 141.36006pt.
-<pictures/dronrot.png, id=445, 787.28171pt x 729.61946pt>
+<pictures/dronrot.png, id=447, 787.28171pt x 729.61946pt>
 File: pictures/dronrot.png Graphic file (type png)
 <use pictures/dronrot.png>
 Package pdftex.def Info: pictures/dronrot.png  used on input line 18.
@@ -846,7 +846,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 22--26
 
  []
 
-<pictures/rotangle.png, id=454, 505.89pt x 404.51125pt>
+<pictures/rotangle.png, id=456, 505.89pt x 404.51125pt>
 File: pictures/rotangle.png Graphic file (type png)
 <use pictures/rotangle.png>
 Package pdftex.def Info: pictures/rotangle.png  used on input line 29.
@@ -912,7 +912,7 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 50.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
 [17]
-<pictures/pdb.jpg, id=483, 319.1925pt x 458.71375pt>
+<pictures/pdb.jpg, id=485, 319.1925pt x 458.71375pt>
 File: pictures/pdb.jpg Graphic file (type jpg)
 <use pictures/pdb.jpg>
 Package pdftex.def Info: pictures/pdb.jpg  used on input line 53.
@@ -956,12 +956,12 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 104.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
 [19]
-<pictures/esc.jpg, id=503, 181.42781pt x 197.98969pt>
+<pictures/esc.jpg, id=505, 181.42781pt x 197.98969pt>
 File: pictures/esc.jpg Graphic file (type jpg)
 <use pictures/esc.jpg>
 Package pdftex.def Info: pictures/esc.jpg  used on input line 107.
 (pdftex.def)             Requested size: 113.81102pt x 124.20244pt.
-<pictures/motor.pdf, id=504, 1027.84pt x 770.88pt>
+<pictures/motor.pdf, id=506, 1027.84pt x 770.88pt>
 File: pictures/motor.pdf Graphic file (type pdf)
 <use pictures/motor.pdf>
 Package pdftex.def Info: pictures/motor.pdf  used on input line 113.
@@ -990,7 +990,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--128
 
  []
 
-<pictures/imu.jpg, id=520, 243.91125pt x 398.99063pt>
+<pictures/imu.jpg, id=522, 243.91125pt x 398.99063pt>
 File: pictures/imu.jpg Graphic file (type jpg)
 <use pictures/imu.jpg>
 Package pdftex.def Info: pictures/imu.jpg  used on input line 143.
@@ -1019,7 +1019,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 152--159
 
  []
 
-<pictures/xbee.jpg, id=528, 602.25pt x 602.25pt>
+<pictures/xbee.jpg, id=530, 602.25pt x 602.25pt>
 File: pictures/xbee.jpg Graphic file (type jpg)
 <use pictures/xbee.jpg>
 Package pdftex.def Info: pictures/xbee.jpg  used on input line 163.
@@ -1038,7 +1038,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--178
 
  []
 
-<pictures/blue.jpg, id=534, 396.48125pt x 302.12875pt>
+<pictures/blue.jpg, id=536, 396.48125pt x 302.12875pt>
 File: pictures/blue.jpg Graphic file (type jpg)
 <use pictures/blue.jpg>
 Package pdftex.def Info: pictures/blue.jpg  used on input line 181.
@@ -1057,31 +1057,31 @@ Underfull \hbox (badness 10000) in paragraph at lines 192--197
 
  []
 
-<pictures/uno.jpg, id=539, 621.82312pt x 411.03563pt>
+<pictures/uno.jpg, id=541, 621.82312pt x 411.03563pt>
 File: pictures/uno.jpg Graphic file (type jpg)
 <use pictures/uno.jpg>
 Package pdftex.def Info: pictures/uno.jpg  used on input line 200.
 (pdftex.def)             Requested size: 142.26378pt x 94.03445pt.
-<pictures/nano.jpg, id=540, 661.72218pt x 259.7203pt>
+<pictures/nano.jpg, id=542, 661.72218pt x 259.7203pt>
 File: pictures/nano.jpg Graphic file (type jpg)
 <use pictures/nano.jpg>
 Package pdftex.def Info: pictures/nano.jpg  used on input line 201.
 (pdftex.def)             Requested size: 142.26378pt x 55.83481pt.
-
+File: pictures/logo2.pdf Graphic file (type pdf)
+<use pictures/logo2.pdf>
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 212.
+(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
+[24 <./pictures/uno.jpg> <./pictures/nano.jpg>]
 Underfull \hbox (badness 10000) in paragraph at lines 213--214
 
  []
 
-File: pictures/logo2.pdf Graphic file (type pdf)
-<use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 215.
-(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[24 <./pictures/uno.jpg> <./pictures/nano.jpg>]
+
 Underfull \hbox (badness 10000) in paragraph at lines 215--227
 
  []
 
-<pictures/baro.jpg, id=546, 73.77562pt x 95.6072pt>
+<pictures/baro.jpg, id=548, 73.77562pt x 95.6072pt>
 File: pictures/baro.jpg Graphic file (type jpg)
 <use pictures/baro.jpg>
 Package pdftex.def Info: pictures/baro.jpg  used on input line 230.
@@ -1101,7 +1101,7 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 248.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
 [25 <./pictures/baro.jpg>]
-<pictures/laser.jpg, id=554, 310.15875pt x 225.84375pt>
+<pictures/laser.jpg, id=556, 310.15875pt x 225.84375pt>
 File: pictures/laser.jpg Graphic file (type jpg)
 <use pictures/laser.jpg>
 Package pdftex.def Info: pictures/laser.jpg  used on input line 251.
@@ -1116,17 +1116,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 260--268
 
  []
 
-<pictures/camera.png, id=555, 727.21687pt x 329.73187pt>
+<pictures/camera.png, id=557, 727.21687pt x 329.73187pt>
 File: pictures/camera.png Graphic file (type png)
 <use pictures/camera.png>
 Package pdftex.def Info: pictures/camera.png  used on input line 271.
 (pdftex.def)             Requested size: 284.52756pt x 129.0125pt.
-)
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 201.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 273.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [26 <./pictures/laser.jpg>]
+[26 <./pictures/laser.jpg>])
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 201.
@@ -1159,12 +1158,12 @@ Package pdftex.def Info: pictures/logo2.pdf  used on input line 37.
 
 
 ]
-<pictures/pwm.png, id=572, 300.3722pt x 328.97906pt>
+<pictures/pwm.png, id=574, 300.3722pt x 328.97906pt>
 File: pictures/pwm.png Graphic file (type png)
 <use pictures/pwm.png>
 Package pdftex.def Info: pictures/pwm.png  used on input line 43.
 (pdftex.def)             Requested size: 284.52756pt x 311.64987pt.
-<pictures/esc_calib.pdf, id=575, 1027.84pt x 770.88pt>
+<pictures/esc_calib.pdf, id=577, 1027.84pt x 770.88pt>
 File: pictures/esc_calib.pdf Graphic file (type pdf)
 <use pictures/esc_calib.pdf>
 Package pdftex.def Info: pictures/esc_calib.pdf  used on input line 57.
@@ -1183,7 +1182,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
  []
 
-<pictures/esc_calib5.jpg, id=581, 580.41844pt x 371.13657pt>
+<pictures/esc_calib5.jpg, id=583, 580.41844pt x 371.13657pt>
 File: pictures/esc_calib5.jpg Graphic file (type jpg)
 <use pictures/esc_calib5.jpg>
 Package pdftex.def Info: pictures/esc_calib5.jpg  used on input line 64.
@@ -1193,112 +1192,127 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 67.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
 [30 <./pictures/esc_calib.pdf>]
-<pictures/esc_calib6.jpg, id=596, 580.41844pt x 374.14781pt>
+<pictures/esc_calib6.jpg, id=598, 580.41844pt x 374.14781pt>
 File: pictures/esc_calib6.jpg Graphic file (type jpg)
 <use pictures/esc_calib6.jpg>
 Package pdftex.def Info: pictures/esc_calib6.jpg  used on input line 70.
 (pdftex.def)             Requested size: 341.43306pt x 220.09445pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
+
+ []
+
+File: pictures/logo2.pdf Graphic file (type pdf)
+<use pictures/logo2.pdf>
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 79.
+(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
+[31 <./pictures/esc_calib5.jpg> <./pictures/esc_calib6.jpg>]
+Overfull \hbox (12.71223pt too wide) in paragraph at lines 79--82
+\T1/cmr/m/n/12 Jelikoº gy-roskop m¥°í úhlovou rychlost, úhly pitch a roll dosta
+ne in-te-grací z po£áte£ního
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 79--82
 
  []
 
 
-Overfull \hbox (11.45528pt too wide) in paragraph at lines 94--98
+Underfull \hbox (badness 10000) in paragraph at lines 86--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--95
+
+ []
+
+<pictures/complementary.jpg, id=605, 578.16pt x 205.76875pt>
+File: pictures/complementary.jpg Graphic file (type jpg)
+<use pictures/complementary.jpg>
+Package pdftex.def Info: pictures/complementary.jpg  used on input line 105.
+(pdftex.def)             Requested size: 426.79134pt x 151.89598pt.
+
+Overfull \hbox (11.45528pt too wide) in paragraph at lines 99--108
 \T1/cmr/m/n/12 Komplementární filtr je ne-j-jednodu²²í z uve-dených fil-tr·. Vy
 uºívá data z akcelerometru
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 94--98
+Underfull \hbox (badness 10000) in paragraph at lines 99--108
 
  []
 
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 98.
-(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[31 <./pictures/esc_calib5.jpg> <./pictures/esc_calib6.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 105--108
-
- []
-
-<pictures/PIDDiagram.pdf, id=605, 598.15468pt x 421.575pt>
-File: pictures/PIDDiagram.pdf Graphic file (type pdf)
-<use pictures/PIDDiagram.pdf>
-Package pdftex.def Info: pictures/PIDDiagram.pdf  used on input line 123.
-(pdftex.def)             Requested size: 426.79134pt x 300.81273pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 110--125
-
- []
-
-File: pictures/logo2.pdf Graphic file (type pdf)
-<use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 125.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 108.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
 [32]
+Underfull \hbox (badness 10000) in paragraph at lines 117--120
+
+ []
+
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 126.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 120.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [33]
-<pictures/PIDsDiagram.pdf, id=617, 598.15468pt x 421.575pt>
+[33 <./pictures/complementary.jpg>]
+<pictures/PIDDiagram.pdf, id=622, 598.15468pt x 421.575pt>
+File: pictures/PIDDiagram.pdf Graphic file (type pdf)
+<use pictures/PIDDiagram.pdf>
+Package pdftex.def Info: pictures/PIDDiagram.pdf  used on input line 135.
+(pdftex.def)             Requested size: 426.79134pt x 300.81273pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--137
+
+ []
+
+File: pictures/logo2.pdf Graphic file (type pdf)
+<use pictures/logo2.pdf>
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 137.
+(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
+[34]
+<pictures/PIDsDiagram.pdf, id=628, 598.15468pt x 421.575pt>
 File: pictures/PIDsDiagram.pdf Graphic file (type pdf)
 <use pictures/PIDsDiagram.pdf>
-Package pdftex.def Info: pictures/PIDsDiagram.pdf  used on input line 129.
+Package pdftex.def Info: pictures/PIDsDiagram.pdf  used on input line 141.
 (pdftex.def)             Requested size: 426.79134pt x 300.81273pt.
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 132.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 144.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [34 <./pictures/PIDDiagram.pdf
+ [35 <./pictures/PIDDiagram.pdf
 
 pdfTeX warning: pdflatex.exe (file ./pictures/PIDDiagram.pdf): PDF inclusion: i
 nvalid other resource which is no dict (key 'ProcSets', type <array>); ignored.
 
 >]
-<pictures/pid.pdf, id=636, 1027.84pt x 770.88pt>
+<pictures/pid.pdf, id=649, 1027.84pt x 770.88pt>
 File: pictures/pid.pdf Graphic file (type pdf)
 <use pictures/pid.pdf>
-Package pdftex.def Info: pictures/pid.pdf  used on input line 136.
+Package pdftex.def Info: pictures/pid.pdf  used on input line 148.
 (pdftex.def)             Requested size: 341.43306pt x 256.07324pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--146
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
 
  []
 
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 146.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 158.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[35 <./pictures/PIDsDiagram.pdf
+[36 <./pictures/PIDsDiagram.pdf
 
 pdfTeX warning: pdflatex.exe (file ./pictures/PIDsDiagram.pdf): PDF inclusion: 
 invalid other resource which is no dict (key 'ProcSets', type <array>); ignored
 .
 > <./pictures/pid.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 168--173
+Underfull \hbox (badness 10000) in paragraph at lines 180--185
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 168--173
-
- []
-
-File: pictures/logo2.pdf Graphic file (type pdf)
-<use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 173.
-(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[36]
-<pictures/xbeeshield.jpg, id=668, 401.5pt x 401.5pt>
-File: pictures/xbeeshield.jpg Graphic file (type jpg)
-<use pictures/xbeeshield.jpg>
-Package pdftex.def Info: pictures/xbeeshield.jpg  used on input line 176.
-(pdftex.def)             Requested size: 227.62204pt x 227.62596pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 182--184
+Underfull \hbox (badness 10000) in paragraph at lines 180--185
 
  []
 
@@ -1306,136 +1320,151 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 185.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[37 <./pictures/xbeeshield.jpg>]
+[37]
+<pictures/xbeeshield.jpg, id=682, 401.5pt x 401.5pt>
+File: pictures/xbeeshield.jpg Graphic file (type jpg)
+<use pictures/xbeeshield.jpg>
+Package pdftex.def Info: pictures/xbeeshield.jpg  used on input line 188.
+(pdftex.def)             Requested size: 227.62204pt x 227.62596pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
+
+ []
+
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 200.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 197.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [38]
-<pictures/FlyingDiagram.pdf, id=679, 421.575pt x 598.15468pt>
+[38 <./pictures/xbeeshield.jpg>]
+File: pictures/logo2.pdf Graphic file (type pdf)
+<use pictures/logo2.pdf>
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 212.
+(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
+ [39]
+<pictures/FlyingDiagram.pdf, id=692, 421.575pt x 598.15468pt>
 File: pictures/FlyingDiagram.pdf Graphic file (type pdf)
 <use pictures/FlyingDiagram.pdf>
-Package pdftex.def Info: pictures/FlyingDiagram.pdf  used on input line 204.
+Package pdftex.def Info: pictures/FlyingDiagram.pdf  used on input line 216.
 (pdftex.def)             Requested size: 341.43306pt x 484.457pt.
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 207.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 219.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [39]
-<pictures/flyctrl.pdf, id=684, 1027.84pt x 770.88pt>
+ [40]
+<pictures/flyctrl.pdf, id=697, 1027.84pt x 770.88pt>
 File: pictures/flyctrl.pdf Graphic file (type pdf)
 <use pictures/flyctrl.pdf>
-Package pdftex.def Info: pictures/flyctrl.pdf  used on input line 211.
+Package pdftex.def Info: pictures/flyctrl.pdf  used on input line 223.
 (pdftex.def)             Requested size: 341.43306pt x 256.07324pt.
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 214.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 226.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [40 <./pictures/FlyingDiagram.pdf
+ [41 <./pictures/FlyingDiagram.pdf
 
 pdfTeX warning: pdflatex.exe (file ./pictures/FlyingDiagram.pdf): PDF inclusion
 : invalid other resource which is no dict (key 'ProcSets', type <array>); ignor
 ed.
 >]
-Underfull \hbox (badness 10000) in paragraph at lines 216--218
+Underfull \hbox (badness 10000) in paragraph at lines 228--230
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 219--220
+Underfull \hbox (badness 10000) in paragraph at lines 231--232
 
  []
 
-<pictures/ObstacleDiagram.pdf, id=703, 421.575pt x 299.19778pt>
+<pictures/ObstacleDiagram.pdf, id=716, 421.575pt x 299.19778pt>
 File: pictures/ObstacleDiagram.pdf Graphic file (type pdf)
 <use pictures/ObstacleDiagram.pdf>
-Package pdftex.def Info: pictures/ObstacleDiagram.pdf  used on input line 223.
+Package pdftex.def Info: pictures/ObstacleDiagram.pdf  used on input line 235.
 (pdftex.def)             Requested size: 341.43306pt x 242.32603pt.
-File: pictures/logo2.pdf Graphic file (type pdf)
-<use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 226.
-(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[41 <./pictures/flyctrl.pdf>]
-<pictures/obstacle.pdf, id=723, 1027.84pt x 770.88pt>
-File: pictures/obstacle.pdf Graphic file (type pdf)
-<use pictures/obstacle.pdf>
-Package pdftex.def Info: pictures/obstacle.pdf  used on input line 229.
-(pdftex.def)             Requested size: 284.52756pt x 213.39828pt.
-<pictures/obstacle_teo.pdf, id=724, 1027.84pt x 770.88pt>
-File: pictures/obstacle_teo.pdf Graphic file (type pdf)
-<use pictures/obstacle_teo.pdf>
-Package pdftex.def Info: pictures/obstacle_teo.pdf  used on input line 235.
-(pdftex.def)             Requested size: 284.52756pt x 213.39828pt.
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 238.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [42 <./pictures/ObstacleDiagram.pdf
+[42 <./pictures/flyctrl.pdf>]
+<pictures/obstacle.pdf, id=736, 1027.84pt x 770.88pt>
+File: pictures/obstacle.pdf Graphic file (type pdf)
+<use pictures/obstacle.pdf>
+Package pdftex.def Info: pictures/obstacle.pdf  used on input line 241.
+(pdftex.def)             Requested size: 284.52756pt x 213.39828pt.
+<pictures/obstacle_teo.pdf, id=737, 1027.84pt x 770.88pt>
+File: pictures/obstacle_teo.pdf Graphic file (type pdf)
+<use pictures/obstacle_teo.pdf>
+Package pdftex.def Info: pictures/obstacle_teo.pdf  used on input line 247.
+(pdftex.def)             Requested size: 284.52756pt x 213.39828pt.
+File: pictures/logo2.pdf Graphic file (type pdf)
+<use pictures/logo2.pdf>
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 250.
+(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
+ [43 <./pictures/ObstacleDiagram.pdf
 
 pdfTeX warning: pdflatex.exe (file ./pictures/ObstacleDiagram.pdf): PDF inclusi
 on: invalid other resource which is no dict (key 'ProcSets', type <array>); ign
 ored.
 > <./pictures/obstacle.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 254--256
+Underfull \hbox (badness 10000) in paragraph at lines 266--268
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 257--264
+Underfull \hbox (badness 10000) in paragraph at lines 269--276
 
  []
 
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 264.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 276.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[43 <./pictures/obstacle_teo.pdf>]
-<pictures/NaviDiagram.pdf, id=758, 421.575pt x 598.15468pt>
+[44 <./pictures/obstacle_teo.pdf>]
+<pictures/NaviDiagram.pdf, id=771, 421.575pt x 598.15468pt>
 File: pictures/NaviDiagram.pdf Graphic file (type pdf)
 <use pictures/NaviDiagram.pdf>
-Package pdftex.def Info: pictures/NaviDiagram.pdf  used on input line 268.
+Package pdftex.def Info: pictures/NaviDiagram.pdf  used on input line 280.
 (pdftex.def)             Requested size: 398.33858pt x 565.19527pt.
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 271.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 283.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [44]
-Underfull \hbox (badness 10000) in paragraph at lines 273--277
+ [45]
+Underfull \hbox (badness 10000) in paragraph at lines 285--289
 
  []
 
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 277.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 289.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[45 <./pictures/NaviDiagram.pdf
+[46 <./pictures/NaviDiagram.pdf
 
 pdfTeX warning: pdflatex.exe (file ./pictures/NaviDiagram.pdf): PDF inclusion: 
 invalid other resource which is no dict (key 'ProcSets', type <array>); ignored
 .
 >]
-<pictures/DroneDiagram.pdf, id=786, 598.15468pt x 845.07718pt>
+<pictures/DroneDiagram.pdf, id=799, 598.15468pt x 845.07718pt>
 File: pictures/DroneDiagram.pdf Graphic file (type pdf)
 <use pictures/DroneDiagram.pdf>
-Package pdftex.def Info: pictures/DroneDiagram.pdf  used on input line 280.
+Package pdftex.def Info: pictures/DroneDiagram.pdf  used on input line 292.
 (pdftex.def)             Requested size: 426.79134pt x 603.0006pt.
-<pictures/pdb_com.pdf, id=787, 1027.84pt x 770.88pt>
+<pictures/pdb_com.pdf, id=800, 1027.84pt x 770.88pt>
 File: pictures/pdb_com.pdf Graphic file (type pdf)
 <use pictures/pdb_com.pdf>
-Package pdftex.def Info: pictures/pdb_com.pdf  used on input line 285.
+Package pdftex.def Info: pictures/pdb_com.pdf  used on input line 297.
 (pdftex.def)             Requested size: 284.52756pt x 213.39828pt.
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 287.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 299.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [46]
+ [47]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<pictures/pdb_ardu.pdf, id=792, 1027.84pt x 770.88pt>
+<pictures/pdb_ardu.pdf, id=805, 1027.84pt x 770.88pt>
 File: pictures/pdb_ardu.pdf Graphic file (type pdf)
 <use pictures/pdb_ardu.pdf>
-Package pdftex.def Info: pictures/pdb_ardu.pdf  used on input line 290.
+Package pdftex.def Info: pictures/pdb_ardu.pdf  used on input line 302.
 (pdftex.def)             Requested size: 284.52756pt x 213.39828pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -1445,7 +1474,7 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 203.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [47 <./pictures/DroneDiagram.pdf
+ [48 <./pictures/DroneDiagram.pdf
 
 pdfTeX warning: pdflatex.exe (file ./pictures/DroneDiagram.pdf): PDF inclusion:
  invalid other resource which is no dict (key 'ProcSets', type <array>); ignore
@@ -1455,7 +1484,7 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 203.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [48 <./pictures/pdb_com.pdf> <./pictures/pdb_ardu.pdf>]
+ [49 <./pictures/pdb_com.pdf> <./pictures/pdb_ardu.pdf>]
 \openout2 = `6-testovani.aux'.
 
  (6-testovani.tex
@@ -1482,7 +1511,7 @@ LaTeX Warning: No positions in optional float specifier.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 30.
 
-<pictures/testRoll.png, id=845, 1025.33063pt x 482.55281pt>
+<pictures/testRoll.png, id=859, 1025.33063pt x 482.55281pt>
 File: pictures/testRoll.png Graphic file (type png)
 <use pictures/testRoll.png>
 Package pdftex.def Info: pictures/testRoll.png  used on input line 45.
@@ -1491,12 +1520,12 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 48.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[49
+[50
 
 
 
 ]
-<pictures/testRoll1.png, id=851, 1035.87pt x 505.89pt>
+<pictures/testRoll1.png, id=864, 1035.87pt x 505.89pt>
 File: pictures/testRoll1.png Graphic file (type png)
 <use pictures/testRoll1.png>
 Package pdftex.def Info: pictures/testRoll1.png  used on input line 51.
@@ -1505,8 +1534,8 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 54.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [50 <./pictures/testRoll.png>]
-<pictures/pidtest.jpg, id=857, 1115.16624pt x 836.12375pt>
+ [51 <./pictures/testRoll.png>]
+<pictures/pidtest.jpg, id=870, 1115.16624pt x 836.12375pt>
 File: pictures/pidtest.jpg Graphic file (type jpg)
 <use pictures/pidtest.jpg>
 Package pdftex.def Info: pictures/pidtest.jpg  used on input line 57.
@@ -1525,12 +1554,12 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 66.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[51 <./pictures/testRoll1.png> <./pictures/pidtest.jpg>])
+[52 <./pictures/testRoll1.png> <./pictures/pidtest.jpg>])
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 204.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [52]
+ [53]
 \openout2 = `7-aplikace.aux'.
 
  (7-aplikace.tex
@@ -1538,7 +1567,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--5
 
  []
 
-<pictures/app1.png, id=868, 1084.05pt x 1927.2pt>
+<pictures/app1.png, id=881, 1084.05pt x 1927.2pt>
 File: pictures/app1.png Graphic file (type png)
 <use pictures/app1.png>
 Package pdftex.def Info: pictures/app1.png  used on input line 10.
@@ -1549,7 +1578,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--12
  []
 
 
-Package natbib Warning: Citation `joystick' on page 53 undefined on input line 
+Package natbib Warning: Citation `joystick' on page 54 undefined on input line 
 16.
 
 
@@ -1572,17 +1601,17 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 17.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[53
+[54
 
 
 
  <./pictures/app1.png>]
-<pictures/app.png, id=875, 1927.2pt x 1084.05pt>
+<pictures/app.png, id=888, 1927.2pt x 1084.05pt>
 File: pictures/app.png Graphic file (type png)
 <use pictures/app.png>
 Package pdftex.def Info: pictures/app.png  used on input line 20.
 (pdftex.def)             Requested size: 284.52756pt x 160.03659pt.
-<pictures/rcDiagram.pdf, id=876, 421.575pt x 299.19778pt>
+<pictures/rcDiagram.pdf, id=889, 421.575pt x 299.19778pt>
 File: pictures/rcDiagram.pdf Graphic file (type pdf)
 <use pictures/rcDiagram.pdf>
 Package pdftex.def Info: pictures/rcDiagram.pdf  used on input line 26.
@@ -1591,12 +1620,12 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 29.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [54 <./pictures/app.png>]
+ [55 <./pictures/app.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 31--33
 
  []
 
-<pictures/app2.png, id=881, 1084.05pt x 1927.2pt>
+<pictures/app2.png, id=895, 1084.05pt x 1927.2pt>
 File: pictures/app2.png Graphic file (type png)
 <use pictures/app2.png>
 Package pdftex.def Info: pictures/app2.png  used on input line 36.
@@ -1605,7 +1634,7 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 39.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[55 <./pictures/rcDiagram.pdf
+[56 <./pictures/rcDiagram.pdf
 
 pdfTeX warning: pdflatex.exe (file ./pictures/rcDiagram.pdf): PDF inclusion: in
 valid other resource which is no dict (key 'ProcSets', type <array>); ignored.
@@ -1614,7 +1643,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 41--43
 
  []
 
-<pictures/fpvscreenshot.png, id=906, 470.75874pt x 836.12375pt>
+<pictures/fpvscreenshot.png, id=919, 470.75874pt x 836.12375pt>
 File: pictures/fpvscreenshot.png Graphic file (type png)
 <use pictures/fpvscreenshot.png>
 Package pdftex.def Info: pictures/fpvscreenshot.png  used on input line 46.
@@ -1623,12 +1652,12 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 49.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[56 <./pictures/app2.png>])
+[57 <./pictures/app2.png>])
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 205.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [57 <./pictures/fpvscreenshot.png>]
+ [58 <./pictures/fpvscreenshot.png>]
 \openout2 = `8-zaver.aux'.
 
  (8-zaver.tex)
@@ -1646,7 +1675,7 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 206.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[58
+[59
 
 
 
@@ -1655,7 +1684,7 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 206.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [59]
+ [60]
 \openout2 = `zkratky.aux'.
 
  (zkratky.tex
@@ -1663,7 +1692,7 @@ File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 85.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [60
+ [61
 
 
 
@@ -1698,106 +1727,127 @@ Underfull \hbox (badness 3492) in paragraph at lines 40--42
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 54--58
+Underfull \hbox (badness 1418) in paragraph at lines 44--48
+[]\T1/cmr/m/it/12 Self Bal-anc-ing Robot Us-ing Mpu6050 Ac-celerom-e-ter \T1/cm
+r/m/n/12 [on-line]. [cit. 2019-
+ []
+
+
+Underfull \hbox (badness 1019) in paragraph at lines 44--48
+\T1/cmr/m/n/12 05-11].  Do-stup-né z: [][]$\T1/cmtt/m/n/12 https : / / www . ro
+botshop . com / community / forum / t /
+ []
+
+File: pictures/logo2.pdf Graphic file (type pdf)
+<use pictures/logo2.pdf>
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 68.
+(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
+[62
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 69--73
 []\T1/cmr/m/it/12 Design, Build and Im-prove a Quad-copter \T1/cmr/m/n/12 [on-l
 ine]. Copy-right \TS1/cmr/m/n/12 ©\T1/cmr/m/n/12 .
  []
 
 
-Underfull \hbox (badness 2980) in paragraph at lines 54--58
+Underfull \hbox (badness 2980) in paragraph at lines 69--73
 \T1/cmr/m/n/12 [cit. 2019-05-05].  Do-stup-né z: [][]$\T1/cmtt/m/n/12 https : /
  / www . instructables . com / id /
  []
 
-File: pictures/logo2.pdf Graphic file (type pdf)
-<use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 65.
-(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[61
 
-
-]
-Underfull \hbox (badness 1028) in paragraph at lines 66--69
+Underfull \hbox (badness 1028) in paragraph at lines 81--84
 []\T1/cmr/m/it/12 HGLRC BS30A \T1/cmr/m/n/12 [on-line]. [cit. 2019-05-05].  Do-
 stup-né z: [][]$\T1/cmtt/m/n/12 https : / / www .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--82
+Underfull \hbox (badness 10000) in paragraph at lines 93--97
 []\T1/cmr/m/it/12 MEMS Ac-celerom-e-ter Gy-ro-scope Mag-ne-tome-ter and Ar-duin
 o. How
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--82
+Underfull \hbox (badness 10000) in paragraph at lines 93--97
 \T1/cmr/m/it/12 To Mecha-tron-ics \T1/cmr/m/n/12 [on-line]. Copy-right \TS1/cmr
 /m/n/12 © \T1/cmr/m/n/12 2019 How-ToMecha-tron-
  []
 
 
-Underfull \hbox (badness 2556) in paragraph at lines 78--82
+Underfull \hbox (badness 2556) in paragraph at lines 93--97
 \T1/cmr/m/n/12 ics.com. All rights re-served. [cit. 2019-05-05].  Do-stup-né z:
  [][]$\T1/cmtt/m/n/12 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--82
+Underfull \hbox (badness 10000) in paragraph at lines 93--97
 \T1/cmtt/m/n/12 / / howtomechatronics . com / how-[]it-[]works / electrical-[]e
 ngineering /
  []
 
-
-Underfull \hbox (badness 4518) in paragraph at lines 111--114
+File: pictures/logo2.pdf Graphic file (type pdf)
+<use pictures/logo2.pdf>
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 124.
+(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
+[63]
+Underfull \hbox (badness 4518) in paragraph at lines 126--129
 []\T1/cmr/m/it/12 MK3640$\OML/cmm/m/it/12 =$\T1/cmr/m/it/12 34 5mm \T1/cmr/m/n/
 12 [on-line]. [cit. 2019-05-05].  Do-stup-né z: [][]$\T1/cmtt/m/n/12 https :
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 111--114
+Underfull \hbox (badness 10000) in paragraph at lines 126--129
 \T1/cmtt/m/n/12 / / www . mikrocontroller . com / index . php ? main _ page = p
 roduct _ info & cPath =
  []
 
-File: pictures/logo2.pdf Graphic file (type pdf)
-<use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 120.
-(pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[62]
-Underfull \hbox (badness 1394) in paragraph at lines 153--157
+
+Underfull \hbox (badness 1394) in paragraph at lines 168--172
 \T1/cmr/m/n/12 Do-stup-né z: [][]$\T1/cmtt/m/n/12 http : / / 1oomzzme3s617r8yzr
 8qutjk-[]wpengine . netdna-[]ssl .
  []
 
 
-Underfull \hbox (badness 5245) in paragraph at lines 159--162
+Underfull \hbox (badness 5245) in paragraph at lines 174--177
 []\T1/cmr/m/it/12 Picture of ro-ta-tion an-gles \T1/cmr/m/n/12 [on-line]. [cit.
  2019-05-05].  Do-stup-né z:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--162
+Underfull \hbox (badness 10000) in paragraph at lines 174--177
 [][]$\T1/cmtt/m/n/12 https : / / devusa . djicdn . com / images / flightControl
 ler-[]concepts /
  []
 
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
-Package pdftex.def Info: pictures/logo2.pdf  used on input line 179.
+Package pdftex.def Info: pictures/logo2.pdf  used on input line 183.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
-[63])
+[64])
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 226.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [64]
+ [65]
 \openout2 = `prilohy.aux'.
 
- (prilohy.tex)
+ (prilohy.tex
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 8--226
+
+ []
+
 File: pictures/logo2.pdf Graphic file (type pdf)
 <use pictures/logo2.pdf>
 Package pdftex.def Info: pictures/logo2.pdf  used on input line 226.
 (pdftex.def)             Requested size: 19.27116pt x 14.52563pt.
- [65
+[66
 
 
 ]
@@ -1813,7 +1863,7 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 229.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 229.
 Package rerunfilecheck Info: File `david-zahradnik-dp-2019.out' has not changed
 .
-(rerunfilecheck)             Checksum: 25EBAA2E4E9D7B8ACDEE4C11E0DDC2FC;6657.
+(rerunfilecheck)             Checksum: E05F63BDCD16F588CEAECE22213F4E07;6691.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1821,13 +1871,13 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 229.
  ) 
 Here is how much of TeX's memory you used:
- 14293 strings out of 492946
- 210593 string characters out of 3125503
- 299952 words of memory out of 3000000
- 17635 multiletter control sequences out of 15000+200000
+ 14312 strings out of 492946
+ 210970 string characters out of 3125503
+ 300047 words of memory out of 3000000
+ 17648 multiletter control sequences out of 15000+200000
  20766 words of font info for 45 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,19n,50p,747b,564s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,19n,50p,747b,566s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\zahrada\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi60
 0\ectt1200.pk> <C:\Users\zahrada\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknap
 pen/ec/dpi600\ecti1200.pk> <C:\Users\zahrada\AppData\Local\MiKTeX\2.9\fonts/pk/
@@ -1847,14 +1897,16 @@ ahrada\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecsx1440.pk>
 ecss1440.pk> <C:\Users\zahrada\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappe
 n/ec/dpi600\ecss1728.pk> <C:\Users\zahrada\AppData\Local\MiKTeX\2.9\fonts/pk/lj
 four/jknappen/ec/dpi600\ecss2074.pk><C:/Users/zahrada/AppData/Local/Programs/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zahrada/AppData/Lo
-cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/zahr
-ada/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/zahrada/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/zah
+rada/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb
 ><C:/Users/zahrada/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmsy8.pfb>
-Output written on david-zahradnik-dp-2019.pdf (65 pages, 6140376 bytes).
+s/cm/cmr8.pfb><C:/Users/zahrada/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Users/zahrada/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on david-zahradnik-dp-2019.pdf (66 pages, 6178538 bytes).
 PDF statistics:
- 1907 PDF objects out of 2073 (max. 8388607)
- 217 named destinations out of 1000 (max. 500000)
- 647 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1938 PDF objects out of 2073 (max. 8388607)
+ 222 named destinations out of 1000 (max. 500000)
+ 652 words of extra memory for PDF output out of 10000 (max. 10000000)
 

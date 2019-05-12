@@ -72,19 +72,24 @@ Nastaví se PPM Min Throttle hodnota na 1000, PPM Max Throttle na 2000 a PPM Cen
 \end{figure}
 
 \section{Filtrace dat IMU}
-
-%\begin{eqnarray*} 
-%	pitchAcc & = & atan2( yAcc, sqrt{xAcc$^2$+ zAcc$^2$}) * (180/PI) \\
-%
-%\end{eqnarray*} 
-%
-%\begin{eqnarray*} 
-%	rollAcc & = & 168.75A\\
-%%		accY = atan2(-1 * (aX) , sqrt(pow(aY, 2) + pow(aZ, 2)))  * (180 / M_PI);
-%\end{eqnarray*} 
-
-%  gyroX = pitch + gX  * elapsedTime / 10e6;
-%gyroY = roll + gY * elapsedTime / 10e6;
+\textbf{Výpočet úhlů pitch a roll z dat akcelerometru.}\\
+\begin{eqnarray*} 
+	pitchAcc & = & atan2 (yAcc , \sqrt{xAcc^{2} + zAcc^{2}})\\
+	rollAcc & = & atan2 (xAcc , \sqrt{yAcc^{2} + zAcc^{2}})\\
+\end{eqnarray*} 
+\textbf{Výpočet úhlů pitch a roll z dat gyroskopu}\\
+Jelikož gyroskop měří úhlovou rychlost, úhly pitch a roll dostane integrací z počátečního stavu. Pokud IMU jednotka nebude v počátečním stavu ve vodorovné poloze, úhly pitch a roll nebudou absolutní.\\
+\begin{eqnarray*} 
+	pitchGyro & = & pitchGyro + xGyro * dt\\
+	rollGyro & = & rollGyro + yGyro * dt\\
+	yawGyro & = & yawGyro + zGyro * dt\\
+\end{eqnarray*} 
+\textbf{Výpočet úhlů yaw z dat magnetometru.}\\
+Při výpočtu úhlu yaw z dat magnetometru je nutné zahrnout magnetickou deklinaci, které je závislá na zeměpisných souřadnicích. \cite{declination}\\
+\begin{eqnarray*} 
+	yawMag & = & atan2(yMag, xMag)+ declinationMag\\
+\end{eqnarray*} 
+uhelNatoceni = atan2(magData.magnetic.y, magData.magnetic.x)+ magDeclination;
 
 Surová data ze všech tří senzorů nejsou použitelná pro výpočet úhlů náklonu, obsahují nepřesnosti a šum, proto je potřebná filtrace.\\
 
@@ -95,6 +100,13 @@ Komplementární filtr je nejjednodušší z uvedených filtrů. Využívá data
 Z dlouhodobého hlediska data z gyroskopu konvergují. Z krátkodobého hlediska jsou přesná, proto pro další použití je potřeba použít High Pass filtr.\\
 Opakem toho jsou data z akcelerometru, data jsou ovlivňována malými silami, které ruší výsledné zrychlení. Z dlouhodobého hlediska jsou data z akcelerometru přesná, proto je potřeba použít Low Pass filtr.\\
 Kombinací High Pass filtru a Low Pass filtr vzniká komplementární filtr, který je pro použití při ovládání dronu dostačující.\\
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=15cm]{pictures/complementary.jpg}
+	\caption{Schéma Komplementárního filtru}
+	\cite{complementary}
+\end{figure}
+
 
 
 \subsection{Kalmanův filtr}

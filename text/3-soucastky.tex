@@ -187,12 +187,12 @@ Pro ovládání všech kompoment byla použita platforma Arduino.
 
 \subsection{Arduino} 
 Arduino je otevřená vývojová platforma, která využívá mikroprocesory od firmy Atmel. Programovat Arduino lze přes jazyk C nebo C++. Pro začínající uživatele byla vytvořena knihovna Wiring, která je velmi rozšířená. Knihovna je integrovaná do vývojového prostředí Arduino IDE. Na trhu existuje spousta typů desek např. Uno, Nano, Mega, Due. \\
-Arduino lze napájet přes 12V konektor, USB nebo VIN, vstupní napětí je v rozsahu 5V - 12V. Vstupy Arduina jsou analogové, nebo digitální. Rozsah analogových vstupů je 0-1023. Digitální vstupy mají hodnotu LOW nebo HIGH, přenos dat probíhá přes PWM, I2C, SPI nebo UART komunikaci. Pro každou komunikaci jsou definovány určité digitální piny.\\
+Arduino lze napájet přes 12V konektor, USB nebo VIN, vstupní napětí je v rozsahu 5V - 12V. Vstupy Arduina jsou analogové, nebo digitální. Rozsah analogových vstupů je 0-1023. Digitální vstupy mají hodnotu LOW nebo HIGH, nominální napětí na pinech je 5V, pouze na Arduino DUE je hodnota napětí 3.3V. Desky podporují komunikaci přes PWM, I2C(piny SCL, SDA), SPI (piny SCLK, MOSI, MISO, SS) nebo UART (piny TX, RX). Pro každou komunikaci jsou definovány určité digitální piny.\\
 
 \textbf{Použité desky Arduino}\\
-Arduino Uno\\
-Arduino Nano\\
-Arduino Due\\
+Arduino Uno- (ATmega328, 8bit, 16 MHz, 700 Kč)\\
+Arduino Nano- (ATmega328, 8bit, 16 MHz, 700 Kč)\\
+Arduino Due- (AT91SAM3X8E, 32bit, 84 MHz, 900 Kč)\\
 Cena: 200 - 1000 Kč\\
 
 \begin{figure}[H]
