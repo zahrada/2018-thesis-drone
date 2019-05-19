@@ -1,0 +1,226 @@
+@Online{mydronelab,
+  key	=	 {zweb:mydronelab},
+  title  =	{How to Build Arduino Quadcopter Drone: Step-by-Step DIY Project. MyDroneLab: Best Drones For Sale, Expert Reviews and Guides},
+  cited =    {2019-05-05},
+  url   =	{http://mydronelab.com/blog/arduino-quadcopter.html},
+  note   =	{Copyright © MyDroneLab. All rights reserved. Reproduction of any portion of this website only at the permission of MyDroneLab. The information provided on this site is for educational use only.},
+}
+
+@Online{physicdrone,
+  key	=	 {zweb:physicdrone},
+  title  =	{The Physics of How Drones Fly | WIRED. WIRED},
+  cited =    {2019-05-05},
+  url   =	{https://www.wired.com/2017/05/the-physics-of-drones/},
+  note   =	{Copyright © 2018 Condé Nast. All rights reserved.},
+}
+
+@Online{rotdrone,
+  key	=	 {zweb:rotdrone},
+  title  =	{Picture of rotation angles},
+  cited =    {2019-05-05},
+  url   =	{https://devusa.djicdn.com/images/flightController-concepts/altitude-7e757661b6.png},
+}
+
+@Online{diffdrone,
+  key	=	 {zweb:diffdrone},
+  title  =	{Design, Build and Improve a Quadcopter},
+  cited =    {2019-05-05},
+  url   =	{https://www.instructables.com/id/Design-Build-and-Improve-a-Quadcopter},
+  note   =	{Copyright ©},
+}
+
+@Online{baterie,
+  key	=	 {zweb:baterie},
+  title  =	{GENS ACE LIPO TATTU serie - 6750 mAh 14,8V 4S1P)},
+  cited =    {2019-05-05},
+  url   =	{https://www.peckamodel.cz/ta-25c-6750-4s1p-gens-ace-lipo-tattu-serie-4s-6750-mah-25c},
+}
+
+@Online{pdb,
+  key	=	 {zweb:pdb},
+  title  =	{Matek PDB s 5V 12V, Rotorama - Závodní drony },
+  cited =    {2019-05-05},
+  url   =	{https://www.rotorama.cz/prislusenstvi/matek-pdb-s-5v-12v},
+}
+
+@Online{learnengineering,
+  key	=	 {zweb:learnengineering},
+  title  =	{Learn Engineering},
+  cited =    {2019-05-05},
+  url   =	{https://www.youtube.com/channel/UCqZQJ4600a9wIfMPbYc60OQ},
+}
+
+@Online{motor,
+  key	=	 {zweb:motor},
+  title  =	{MK3640$/$34 5mm},
+  cited =    {2019-05-05},
+  url   =	{https://www.mikrocontroller.com/index.php?main_page=product_info&cPath=73&products_id=887&zenid=e5f2c8d548f2a39747a4ed06d306a37f},
+}
+
+@Online{kv,
+  key	=	 {zweb:kv},
+  title  =	{Brushless Motor Kv Constant Explained, Learning RC Knowledge and Information for the RC Community},
+  cited =    {2019-05-05},
+  url   =	{http://learningrc.com/motor-kv/},
+    note   =	{Copyright © 2019},
+}
+
+@Online{siieefpv,
+  key	=	 {zweb:siieefpv},
+  title  =	{SiieeFPV},
+  cited =    {2019-05-05},
+  url   =	{https://www.youtube.com/channel/UCbZ81vU3NT_Wp3hijL57ecg},
+}
+
+@Online{esc,
+  key	=	 {zweb:esc},
+  title  =	{HGLRC BS30A },
+  cited =    {2019-05-05},
+  url   =	{https://www.rotorama.cz/regulatory/hglrc-bs30a},
+}
+
+@Online{imu,
+  key	=	 {zweb:imu},
+  title  =	{MEMS Accelerometer Gyroscope Magnetometer & Arduino. How To Mechatronics },
+  cited =    {2019-05-05},
+  url   =	{https://howtomechatronics.com/how-it-works/electrical-engineering/mems-accelerometer-gyrocope-magnetometer-arduino},
+  note   =	{Copyright © 2019 HowToMechatronics.com. All rights reserved},
+}
+
+@Online{mpu9250,
+  key	=	 {zweb:mpu9250},
+  title  =	{MPU-9250 Product Specification Revision 1.1},
+  cited =    {2019-05-05},
+  url   =	{https://www.invensense.com/wp-content/uploads/2015/02/PS-MPU-9250A-01-v1.1.pdf},
+  note   =	{Copyright ©},
+}
+
+@Online{xbee,
+  key	=	 {zweb:xbee},
+  title  =	{UK Distributor of Sparkfun, Arduino, BBC Micro Bit, Adafruit - Proto-PIC},
+  cited =    {2019-05-05},
+  url   =	{https://www.proto-pic.co.uk/user/products/large/08665-03-L__99538__33841.jpg},
+}
+
+@Online{bpm,
+  key	=	 {zweb:bpm},
+  title  =	{GitHub - Adafruit_BMP280_Library: Arduino Library for BMP280 sensors},
+  cited =    {2019-05-05},
+  url   =	{https://github.com/adafruit/Adafruit_BMP280_Library},
+  note   =	{Copyright © 2019},
+}
+
+@Online{laser,
+  key	=	 {zweb:laser},
+  title  =	{GitHub - vl53l0x-arduino: Pololu Arduino library for VL53L0X time-of-flight distance sensor},
+  cited =    {2019-05-05},
+  url   =	{https://github.com/pololu/vl53l0x-arduino},
+  note   =	{Copyright © 2019},
+}
+
+@Online{pwm,
+  key	=	 {zweb:pwm},
+  title  =	{Picture Pulse With Modulation},
+  cited =    {2019-05-05},
+  url   =	{http://1oomzzme3s617r8yzr8qutjk-wpengine.netdna-ssl.com/wp-content/uploads/2017/04/Fig-1-pwm.gif},
+  note   =	{Copyright © 2019},
+}
+
+@Online{blheli,
+  key	=	 {zweb:blheli},
+  title  =	{BLHeli/BLHeli_32 ARM},
+  cited =    {2019-05-05},
+  url   =	{https://github.com/bitdump/BLHeli/tree/master/BLHeli_32%20ARM},
+  note   =	{Copyright © 2019},
+}
+
+@Online{mahony,
+  key	=	 {zweb:mahony},
+  title  =	{GitHub - PaulStoffregen/MahonyAHRS},
+  cited =    {2019-05-05},
+  url   =	{https://github.com/PaulStoffregen/MahonyAHRS},
+  note   =	{Copyright © 2019},
+}
+
+@Online{pid,
+  key	=	 {zweb:pid},
+  title  =	{Plynulá regulace PID. Regulace od Jardy},
+  cited =    {2019-05-05},
+  url   =	{https://valter.byl.cz/plynula-regulace-pid},
+  note   =	{Copyright © 2000},
+}
+
+@Online{xbeetut,
+  key	=	 {zweb:xbeetut},
+  title  =	{XBee S2 Quick Reference Guide, Cheat Sheet and Video Tutorials to Getting Started - TunnelsUP. TunnelsUp - Tools and Information for Network Engineers},
+  cited =    {2019-05-05},
+  url   =	{https://www.tunnelsup.com/xbee-guide/},
+  note   =	{Copyright © 2019},
+}
+
+@Online{android,
+  key	=	 {zweb:android},
+  title  =	{Android Developers. Android Developers },
+  cited =    {2019-05-05},
+  url   =	{https://developer.android.com/},
+}
+
+@Online{codemitch,
+  key	=	 {zweb:codemitch},
+  title  =	{CodingWithMitch.com. CodingWithMitch.com },
+  cited =    {2019-05-05},
+  url   =	{https://codingwithmitch.com/},
+}
+
+@Online{electronoobs,
+  key	=	 {zweb:electronoobs},
+  title  =	{ELECTRONOOBS - Electronics tutorials, Arduino, basic circuits, 3D printing, robotics. ELECTRONOOBS - Electronics tutorials, Arduino, basic circuits, 3D printing, robotics },
+  cited =    {2019-05-05},
+  url   =	{http://www.electronoobs.com},
+}
+
+@Online{joystick,
+  key	=	 {zweb:joystick},
+  title  =	{GitHub - controlwear/virtual-joystick-android: This library provides a very simple and ready-to-use custom view which emulates a joystick for Android},
+  cited =    {2019-05-05},
+  url   =	{https://github.com/controlwear/virtual-joystick-android},
+    note   =	{Copyright © 2019},
+}
+
+@Online{hacksterpid,
+  key	=	 {zweb:hacksterpid},
+  title  =	{Drone Basics - PID - Hackster.io. Hackster.io - The community dedicated to learning hardware},
+  cited =    {2019-05-05},
+  url   =	{https://www.hackster.io/ElvisWolcott/drone-basics-pid-83da06},
+    note   =	{Copyright ©},
+}
+
+@Online{comregul,
+  key	=	 {zweb:comregul},
+  title  =	{Youtube channel: Joshua Bardwell},
+  cited =    {2019-05-05},
+  url   =	{https://www.youtube.com/channel/UCX3eufnI7A2I7IkKHZn8KSQ},
+}
+
+@Online{dataatmel,
+  key	=	 {zweb:dataatmel},
+  title  =	{ATmega48P/88P/168P/328P datasheet},
+  cited =    {2019-05-05},
+  url   =	{https://www.sparkfun.com/datasheets/Components/SMD/ATMega328.pdf},
+}
+
+@Online{ardu,
+  key	=	 {zweb:ardu},
+  title  =	{Arduino - Home. Arduino - Home},
+  cited =    {2019-05-05},
+  url   =	{https://www.arduino.cc/},
+}
+
+@Online{mikrokopter,
+  key	=	 {zweb:mikrokopter},
+  title  =	{MikrokopterWiki. StartSeite - MikrokopterWiki},
+  cited =    {2019-05-05},
+  url   =	{http://wiki.mikrokopter.de/en},
+}
+
+

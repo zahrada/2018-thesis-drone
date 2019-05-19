@@ -16,10 +16,12 @@ float pitch, roll, yaw;
 float error, proporcional, derivate;
 
 //stabilization PID
-float kp = 0;
+float kp = 1;
 float ki = 0;
 float kd = 0;
-float kpYaw, kiYaw, kdYaw;
+float kpYaw = 1;
+float kiYaw = 0;
+float kdYaw = 0;
 float prevErrorRoll = 0;
 float prevErrorPitch = 0;
 float prevErrorYaw = 0;
@@ -27,10 +29,12 @@ float pidPitch, pidRoll, pidYaw, pidIpitch, pidIroll, pidIyaw;
 int pidMax = 300;
 
 //rate PID
-float dkp = 1;
-float dki = 0;
-float dkd = 0;
-float dkpYaw, dkiYaw, dkdYaw;
+float dkp = 0.1;
+float dki = 0.0;
+float dkd = 15;
+float dkpYaw = 4.0;
+float dkiYaw = 0.02;
+float dkdYaw = 0;
 float dprevErrorRoll = 0;
 float dprevErrorPitch = 0;
 float dprevErrorYaw = 0;
@@ -71,9 +75,10 @@ void setup() {
 
   time = micros(); //Start counting time in milliseconds
   DDRD = DDRD | B11111100;  // this is safer as it sets pins 2 to 7 as outputs
-  
-  delayMicroseconds(10000); 
-  for (cal_int = 0; cal_int < 1250 ; cal_int ++){                           //Start pwm signal for esc
+
+  delayMicroseconds(10000);
+
+  for (cal_int = 0; cal_int < 1250 ; cal_int ++) {                          //Start pwm signal for esc
     PORTD |= B11111100;                                                     //Set digital poort 2- 7 high.
     delayMicroseconds(1000);                                                //Wait 1000us.
     PORTD &= B00000011;                                                     //Set digital poort 2- 7 low.
@@ -85,9 +90,9 @@ void setup() {
 void loop() {
   // 2000uS
   complementaryFilter(pitch, roll, aX, aY, aZ, gX, gY, gZ);
-
+  
   readNaviCtrl(throttle, desiredPitch, desiredRoll, desiredYaw, kp, ki, kd);
-
+  
   // Stabilization PID
   calculatePID(pitch, desiredPitch, kp, ki, kd, pidIpitch,  prevErrorPitch, pidPitch, 30);
   calculatePID(roll, desiredRoll, kp, ki, kd, pidIroll,  prevErrorRoll, pidRoll, 30);
@@ -96,54 +101,72 @@ void loop() {
   // Rate PID
   calculatePID(gyroX, pidPitch * 5, dkp, dki, dkd, dpidIpitch,  dprevErrorPitch, dpidPitch, dpidMax);
   calculatePID(gyroY, pidRoll * 5, dkp, dki, dkd, dpidIroll,  dprevErrorRoll, dpidRoll, dpidMax);
-  calculatePID(gyroZ, gyroZ * 5, dkpYaw, dkiYaw, dkdYaw, dpidIyaw,  dprevErrorYaw, dpidYaw, dpidMax);
+  calculatePID(gyroZ, gyroZ, dkpYaw, dkiYaw, dkdYaw, dpidIyaw,  dprevErrorYaw, dpidYaw, dpidMax);
 
-  esc1 = minMax((int)(throttle - dpidPitch + dpidYaw), 1000, 1700);
-  esc2 = minMax((int)(throttle - dpidPitch + dpidRoll - dpidYaw), 1000, 1700);
-  esc3 = minMax((int)(throttle + dpidPitch + dpidRoll + dpidYaw), 1000, 1700);
-  esc4 = minMax((int)(throttle + dpidPitch - dpidYaw), 1000, 1700);
-  esc5 = minMax((int)(throttle + dpidPitch - dpidRoll + dpidYaw), 1000, 1700);
-  esc6 = minMax((int)(throttle - dpidPitch - dpidRoll - dpidYaw), 1000, 1700);
+  esc1 = minMax((int)(throttle + dpidPitch + dpidYaw), 1000, 1700);
+  esc2 = minMax((int)(throttle + dpidPitch - dpidRoll - dpidYaw), 1000, 1700);
+  esc3 = minMax((int)(throttle - dpidPitch - dpidRoll + dpidYaw), 1000, 1700);
+  esc4 = minMax((int)(throttle - dpidPitch - dpidYaw), 1000, 1700);
+  esc5 = minMax((int)(throttle - dpidPitch + dpidRoll + dpidYaw), 1000, 1700);
+  esc6 = minMax((int)(throttle + dpidPitch + dpidRoll - dpidYaw), 1000, 1700);
+/*
+  Serial.print(esc1);
+  Serial.print(" ");
+  Serial.print(esc2);
+  Serial.print(" ");
+  Serial.print(esc3);
+  Serial.print(" ");
+  Serial.print(esc4);
+  Serial.print(" ");
+  Serial.print(esc5);
+  Serial.print(" ");
+  Serial.println(esc6);
+*/
 
   // compensate battery voltage
+  
+  //create pulze for each motor in frequency 250Hz
+  while (micros() - time < 4000);
 
-    //create pulze for each motor in frequency 250Hz
-    while (micros() - time < 4000);
+  time = micros();  // actual time read
 
-    time = micros();  // actual time read
+  PORTD |= B11111100;                     // Set pin 2-7 HIGH
+  timer1 = esc1 + time;
+  timer2 = esc2 + time;
+  timer3 = esc3 + time;
+  timer4 = esc4 + time;
+  timer5 = esc5 + time;
+  timer6 = esc6 + time;
 
-    PORTD |= B11111100;                     // Set pin 2-7 HIGH
-    timer1 = esc1 + time;
-    timer2 = esc2 + time;
-    timer3 = esc3 + time;
-    timer4 = esc4 + time;
-    timer5 = esc5 + time;
-    timer6 = esc6 + time;
+  // 1000 uS -2000uS
+    //Serial.println("readImu");
+  //Serial.println(micros());
+  readIMU(aX, aY, aZ, gX, gY, gZ, gyroX, gyroY, gyroZ);
 
-    // 1000 uS -2000uS
-    readIMU(aX, aY, aZ, gX, gY, gZ, gyroX, gyroY, gyroZ);
+    //Serial.println("write");
+  //Serial.println(micros());
 
-    while (PORTD >= B00000011) {            // stay in the loop, while pin 2-7 HIGH
-      timerLoop = micros();
-      if (timer1 <= timerLoop) {
-        PORTD &= B01111111;                 // Set pin 7 LOW
-      }
-      if (timer2 <= timerLoop) {
-        PORTD &= B10111111;                 // Set pin 6 LOW
-      }
-      if (timer3 <= timerLoop) {
-        PORTD &= B11011111;                 // Set pin 5 LOW
-      }
-      if (timer4 <= timerLoop) {
-        PORTD &= B11101111;                 // Set pin 4 LOW
-      }
-      if (timer5 <= timerLoop) {
-        PORTD &= B11110111;                 // Set pin 3 LOW
-      }
-      if (timer6 <= timerLoop) {
-        PORTD &= B11111011;                 // Set pin 2 LOW
-      }
+  while (PORTD >= B00000011) {            // stay in the loop, while pin 2-7 HIGH
+    timerLoop = micros();
+    if (timer1 <= timerLoop) {
+      PORTD &= B01111111;                 // Set pin 7 LOW
     }
+    if (timer2 <= timerLoop) {
+      PORTD &= B10111111;                 // Set pin 6 LOW
+    }
+    if (timer3 <= timerLoop) {
+      PORTD &= B11011111;                 // Set pin 5 LOW
+    }
+    if (timer4 <= timerLoop) {
+      PORTD &= B11101111;                 // Set pin 4 LOW
+    }
+    if (timer5 <= timerLoop) {
+      PORTD &= B11110111;                 // Set pin 3 LOW
+    }
+    if (timer6 <= timerLoop) {
+      PORTD &= B11111011;                 // Set pin 2 LOW
+    }
+  }
 }
 
 void readIMU(float &aX, float &aY, float &aZ, float &gX, float &gY, float &gZ, float &gyroX, float &gyroY, float &gyroZ) {
@@ -179,8 +202,8 @@ void complementaryFilter(float &pitch, float &roll, float aX, float aY, float aZ
   accX = atan2((aY) , sqrt(pow(aX, 2) + pow(aZ, 2))) * (180 / M_PI);
   accY = atan2(-1 * (aX) , sqrt(pow(aY, 2) + pow(aZ, 2)))  * (180 / M_PI);
 
-  pitch = 0.98 * (pitch + gX  * 0.004) + 0.02 * accX;
-  roll = 0.98 * (roll + gY * 0.004) + 0.02 * accY;
+  pitch = 0.996 * (pitch + gX  * 0.004) + 0.004 * accX;
+  roll = 0.996 * (roll + gY * 0.004) + 0.004 * accY;
 }
 
 static  int minMax(int value, int min_value, int max_value) {
@@ -215,7 +238,6 @@ void calculatePID(float actual, float desired, float kp, float ki, float kd, flo
 void readNaviCtrl(int &throttle, float &desiredPitch, float &desiredRoll, float &desiredYaw, float &kp, float &ki, float &kd) {
   while (Serial.available() > 0) {                  // if data is incoming
     resData = Serial.read();                        // read first byte
-    }
     if (resData == 'X') {
       desiredPitch = 0;
       desiredRoll = 0;
@@ -257,6 +279,7 @@ void readNaviCtrl(int &throttle, float &desiredPitch, float &desiredRoll, float 
       kd = atof(buffer) / 10;
     }
   }
+}
 
 void set_gyro_registers() {
   //Setup the MPU-6050
