@@ -12,14 +12,15 @@ unsigned long timerLoop;
 float aX, aY, aZ, gX, gY, gZ, temp;
 float accX, accY, gyroX, gyroY, gyroZ;
 float pitch, roll, yaw;
+float gXOffset, gYOffset, gZOffset;
 
 float error, proporcional, derivate;
 
 //stabilization PID
-float kp = 1;
+float kp = 4.5;
 float ki = 0;
 float kd = 0;
-float kpYaw = 1;
+float kpYaw = 5;
 float kiYaw = 0;
 float kdYaw = 0;
 float prevErrorRoll = 0;
@@ -29,9 +30,9 @@ float pidPitch, pidRoll, pidYaw, pidIpitch, pidIroll, pidIyaw;
 int pidMax = 300;
 
 //rate PID
-float dkp = 0.1;
-float dki = 0.0;
-float dkd = 15;
+float dkp = 1.3;
+float dki = 0.00;
+float dkd = 6; //6
 float dkpYaw = 4.0;
 float dkiYaw = 0.02;
 float dkdYaw = 0;
@@ -45,8 +46,6 @@ int dpidMax = 300;
 int esc1, esc2, esc3, esc4, esc5, esc6;
 
 //fuse do calibration before start flying with drone
-bool firstCalib = false;
-bool runDrone = true;
 bool resBool = false;
 
 // UART
@@ -56,10 +55,9 @@ int size;
 float desiredPitch = 0;
 float desiredRoll = 0;
 float desiredYaw = 0;
-float ddesiredPitch = 0;
-float ddesiredRoll = 0;
-float ddesiredYaw = 0;
 int throttle;
+
+float battery;
 
 void setup() {
 
@@ -73,6 +71,18 @@ void setup() {
 
   readIMU(aX, aY, aZ, gX, gY, gZ, gyroX, gyroY, gyroZ);
 
+  for (cal_int = 0; cal_int < 1000 ; cal_int ++) {                          //Start pwm signal for esc
+    readIMU(aX, aY, aZ, gX, gY, gZ, gyroX, gyroY, gyroZ);
+
+    gXOffset += gX;
+    gYOffset += gY;
+    gZOffset += gZ;
+  }
+
+  gXOffset /= 1000;
+  gYOffset /= 1000;
+  gZOffset /= 1000;
+
   time = micros(); //Start counting time in milliseconds
   DDRD = DDRD | B11111100;  // this is safer as it sets pins 2 to 7 as outputs
 
@@ -84,67 +94,73 @@ void setup() {
     PORTD &= B00000011;                                                     //Set digital poort 2- 7 low.
     delayMicroseconds(3000);                                                //Wait 3000us.
   }
+  battery = battery * 0.9 + analogRead(0) * 0.00163;
   Serial.println("Drone is ready");
+
 }
 
 void loop() {
+
+  battery = battery * 0.90 + analogRead(0) * 0.00163; // analogRead(0) * 0.0163 * 0.1 read battery voltage
+
   // 2000uS
-  complementaryFilter(pitch, roll, aX, aY, aZ, gX, gY, gZ);
-  
+  complementaryFilter(pitch, roll, aX, aY, aZ, gyroX, gyroY, gyroZ);
+
   readNaviCtrl(throttle, desiredPitch, desiredRoll, desiredYaw, kp, ki, kd);
-  
+
   // Stabilization PID
-  calculatePID(pitch, desiredPitch, kp, ki, kd, pidIpitch,  prevErrorPitch, pidPitch, 30);
-  calculatePID(roll, desiredRoll, kp, ki, kd, pidIroll,  prevErrorRoll, pidRoll, 30);
-  calculatePID(yaw, yaw, kpYaw, kiYaw, kdYaw, pidIyaw,  prevErrorYaw, pidYaw, 30);
+  calculatePID(pitch, desiredPitch, kp, ki, kd, pidIpitch,  prevErrorPitch, pidPitch, pidMax);
+  calculatePID(roll, desiredRoll, kp, ki, kd, pidIroll,  prevErrorRoll, pidRoll, pidMax);
+  calculatePID(yaw, desiredYaw, kpYaw, kiYaw, kdYaw, pidIyaw,  prevErrorYaw, pidYaw, pidMax);
 
   // Rate PID
-  calculatePID(gyroX, pidPitch * 5, dkp, dki, dkd, dpidIpitch,  dprevErrorPitch, dpidPitch, dpidMax);
-  calculatePID(gyroY, pidRoll * 5, dkp, dki, dkd, dpidIroll,  dprevErrorRoll, dpidRoll, dpidMax);
+  calculatePID(gyroX, -pidPitch, dkp, dki, dkd, dpidIpitch,  dprevErrorPitch, dpidPitch, dpidMax);
+  calculatePID(gyroY, -pidRoll, dkp, dki, dkd, dpidIroll,  dprevErrorRoll, dpidRoll, dpidMax);
   calculatePID(gyroZ, gyroZ, dkpYaw, dkiYaw, dkdYaw, dpidIyaw,  dprevErrorYaw, dpidYaw, dpidMax);
 
-  esc1 = minMax((int)(throttle + dpidPitch + dpidYaw), 1000, 1700);
-  esc2 = minMax((int)(throttle + dpidPitch - dpidRoll - dpidYaw), 1000, 1700);
-  esc3 = minMax((int)(throttle - dpidPitch - dpidRoll + dpidYaw), 1000, 1700);
-  esc4 = minMax((int)(throttle - dpidPitch - dpidYaw), 1000, 1700);
-  esc5 = minMax((int)(throttle - dpidPitch + dpidRoll + dpidYaw), 1000, 1700);
-  esc6 = minMax((int)(throttle + dpidPitch + dpidRoll - dpidYaw), 1000, 1700);
-/*
-  Serial.print(esc1);
-  Serial.print(" ");
-  Serial.print(esc2);
-  Serial.print(" ");
-  Serial.print(esc3);
-  Serial.print(" ");
-  Serial.print(esc4);
-  Serial.print(" ");
-  Serial.print(esc5);
-  Serial.print(" ");
-  Serial.println(esc6);
-*/
+  esc1 = minMax((int)(throttle - dpidPitch + dpidYaw), 1000, 1700);
+  esc2 = minMax((int)(throttle - dpidPitch + dpidRoll - dpidYaw), 1000, 1700);
+  esc3 = minMax((int)(throttle + dpidPitch + dpidRoll + dpidYaw), 1000, 1700);
+  esc4 = minMax((int)(throttle + dpidPitch - dpidYaw), 1000, 1700);
+  esc5 = minMax((int)(throttle + dpidPitch - dpidRoll + dpidYaw), 1000, 1700);
+  esc6 = minMax((int)(throttle - dpidPitch - dpidRoll - dpidYaw), 1000, 1700);
 
-  // compensate battery voltage
-  
   //create pulze for each motor in frequency 250Hz
   while (micros() - time < 4000);
 
   time = micros();  // actual time read
 
   PORTD |= B11111100;                     // Set pin 2-7 HIGH
-  timer1 = esc1 + time;
-  timer2 = esc2 + time;
-  timer3 = esc3 + time;
-  timer4 = esc4 + time;
-  timer5 = esc5 + time;
-  timer6 = esc6 + time;
-
+  if (throttle >= 1050 && battery >= 12.8) {
+    if (battery < 16.6) {                                            // compensate battery voltage
+      timer1 = (int)minMax((esc1 * 16.8 / battery), 1050, 1700) + time;
+      timer2 = (int)minMax((esc2 * 16.8 / battery), 1050, 1700) + time;
+      timer3 = (int)minMax((esc3 * 16.8 / battery), 1050, 1700) + time;
+      timer4 = (int)minMax((esc4 * 16.8 / battery), 1050, 1700) + time;
+      timer5 = (int)minMax((esc5 * 16.8 / battery), 1050, 1700) + time;
+      timer6 = (int)minMax((esc6 * 16.8 / battery), 1050, 1700) + time;
+    }
+    else {
+      timer1 = esc1 + time;
+      timer2 = esc2 + time;
+      timer3 = esc3 + time;
+      timer4 = esc4 + time;
+      timer5 = esc5 + time;
+      timer6 = esc6 + time;
+    }
+  }
+  else {
+    timer1 = 980 + time;
+    timer2 = 980 + time;
+    timer3 = 980 + time;
+    timer4 = 980 + time;
+    timer5 = 980 + time;
+    timer6 = 980 + time;
+  }
   // 1000 uS -2000uS
-    //Serial.println("readImu");
+  //Serial.println("readImu");
   //Serial.println(micros());
   readIMU(aX, aY, aZ, gX, gY, gZ, gyroX, gyroY, gyroZ);
-
-    //Serial.println("write");
-  //Serial.println(micros());
 
   while (PORTD >= B00000011) {            // stay in the loop, while pin 2-7 HIGH
     timerLoop = micros();
@@ -197,13 +213,20 @@ void readIMU(float &aX, float &aY, float &aZ, float &gX, float &gY, float &gZ, f
   gyroZ = gyroZ * 0.7 + gZ * 0.3;
 }
 
-void complementaryFilter(float &pitch, float &roll, float aX, float aY, float aZ, float gX, float gY, float gZ) {
+void complementaryFilter(float &pitch, float &roll, float aX, float aY, float aZ, float gyroX, float gyroY, float gyroZ) {
+  gyroX -= gXOffset;
+  gyroY -= gYOffset;
+  gyroZ -= gZOffset;
+
   //Complementary filter
   accX = atan2((aY) , sqrt(pow(aX, 2) + pow(aZ, 2))) * (180 / M_PI);
   accY = atan2(-1 * (aX) , sqrt(pow(aY, 2) + pow(aZ, 2)))  * (180 / M_PI);
 
-  pitch = 0.996 * (pitch + gX  * 0.004) + 0.004 * accX;
-  roll = 0.996 * (roll + gY * 0.004) + 0.004 * accY;
+  pitch = 0.996 * (pitch + gyroX  * 0.004) + 0.004 * accX;
+  roll = 0.996 * (roll + gyroY * 0.004) + 0.004 * accY;
+
+  pitch -= roll * sin(gyroZ * 0.0000698);                  //If the IMU has yawed transfer the roll angle to the pitch angel.
+  roll += pitch * sin(gyroZ * 0.0000698);                  //If the IMU has yawed transfer the pitch angle to the roll angel.
 }
 
 static  int minMax(int value, int min_value, int max_value) {
@@ -225,7 +248,6 @@ static  float minMax(float value, float min_value, float max_value) {
   }
   return value;
 }
-
 
 void calculatePID(float actual, float desired, float kp, float ki, float kd, float &integral, float &previous, float &finalPID, float pidMax) {
   error = actual - desired;
@@ -256,27 +278,15 @@ void readNaviCtrl(int &throttle, float &desiredPitch, float &desiredRoll, float 
     }
     if (resData == 'P') {
       Serial.readBytes(buffer, 2);
-      desiredPitch = map(atof(buffer), 0, 99, -30, 30);                  // convert byte array to float
+      desiredPitch = map(atof(buffer), 0, 99, -25, 25);                  // convert byte array to float
     }
     if (resData == 'R') {
       Serial.readBytes(buffer, 2);
-      desiredRoll = map(atof(buffer), 0, 99, -30, 30);
+      desiredRoll = map(atof(buffer), 0, 99, -25, 25);
     }
     if (resData == 'Y') {
       Serial.readBytes(buffer, 2);
       desiredYaw = map(atof(buffer), 0, 99, 0, 360);
-    }
-    if (resData == 'K') {
-      Serial.readBytes(buffer, 2);
-      kp = atof(buffer);
-    }
-    if (resData == 'I') {
-      Serial.readBytes(buffer, 2);
-      ki = atof(buffer) / 10 ;
-    }
-    if (resData == 'D') {
-      Serial.readBytes(buffer, 2);
-      kd = atof(buffer) / 10;
     }
   }
 }
