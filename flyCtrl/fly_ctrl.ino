@@ -47,22 +47,28 @@ int esc1, esc2, esc3, esc4, esc5, esc6;
 
 //fuse do calibration before start flying with drone
 bool resBool = false;
+static boolean recvInProgress = false;
+byte startMarker = '<';
+byte endMarker = '>';
+byte rc;
+static byte ndx = 0; //index of recieve byte
 
 // UART
 byte resData;
 byte buffer[2];
 int size;
+int desiredThrottle = 980;
 float desiredPitch = 0;
 float desiredRoll = 0;
 float desiredYaw = 0;
-int throttle;
+int throttle = 980;
 
 float battery;
 
 void setup() {
 
   Serial.begin(250000); //start Serial communication
-  Serial.println("Start");
+  //Serial.println("Start");
 
   Wire.begin(); //begin the wire comunication
   TWBR = 12;   //Set the I2C clock speed to 400kHz.
@@ -95,7 +101,7 @@ void setup() {
     delayMicroseconds(3000);                                                //Wait 3000us.
   }
   battery = battery * 0.9 + analogRead(0) * 0.00163;
-  Serial.println("Drone is ready");
+  //Serial.println("Drone is ready");
 
 }
 
@@ -106,7 +112,7 @@ void loop() {
   // 2000uS
   complementaryFilter(pitch, roll, aX, aY, aZ, gyroX, gyroY, gyroZ);
 
-  readNaviCtrl(throttle, desiredPitch, desiredRoll, desiredYaw, kp, ki, kd);
+  readNaviCtrl(throttle, desiredThrottle, desiredPitch, desiredRoll, desiredYaw);
 
   // Stabilization PID
   calculatePID(pitch, desiredPitch, kp, ki, kd, pidIpitch,  prevErrorPitch, pidPitch, pidMax);
@@ -132,7 +138,7 @@ void loop() {
 
   PORTD |= B11111100;                     // Set pin 2-7 HIGH
   if (throttle >= 1050 && battery >= 12.8) {
-    if (battery < 16.6) {                                            // compensate battery voltage
+    if (battery < 16.8) {                                            // compensate battery voltage
       timer1 = (int)minMax((esc1 * 16.8 / battery), 1050, 1700) + time;
       timer2 = (int)minMax((esc2 * 16.8 / battery), 1050, 1700) + time;
       timer3 = (int)minMax((esc3 * 16.8 / battery), 1050, 1700) + time;
@@ -257,14 +263,23 @@ void calculatePID(float actual, float desired, float kp, float ki, float kd, flo
   finalPID = minMax(finalPID, -pidMax, pidMax);
 }
 
-void readNaviCtrl(int &throttle, float &desiredPitch, float &desiredRoll, float &desiredYaw, float &kp, float &ki, float &kd) {
+void readNaviCtrl(int &throttle, int &desiredThrottle, float &desiredPitch, float &desiredRoll, float &desiredYaw) {
+  Serial.println(throttle);
+  //slowly increase constant trusth on each motor
+  if (throttle <= desiredThrottle) {
+    throttle += 1;
+  }
+  else {
+    throttle -= 1;
+  }
+
   while (Serial.available() > 0) {                  // if data is incoming
     resData = Serial.read();                        // read first byte
     if (resData == 'X') {
       desiredPitch = 0;
       desiredRoll = 0;
       desiredYaw = 0;
-      throttle = 0;
+      desiredThrottle = 980;
       pidIpitch = 0;
       pidIroll = 0;
       pidIyaw = 0;
@@ -274,19 +289,47 @@ void readNaviCtrl(int &throttle, float &desiredPitch, float &desiredRoll, float 
     }
     if (resData == 'T') {
       Serial.readBytes(buffer, 2);                  // read byte and store in array buffer
-      throttle = map(atoi(buffer), 0, 99, 1000, 1700);                      // convert byte array to integer
+      desiredThrottle = map(atoi((char*)buffer), 0, 99, 1000, 1700);                      // convert byte array to integer
     }
     if (resData == 'P') {
       Serial.readBytes(buffer, 2);
-      desiredPitch = map(atof(buffer), 0, 99, -25, 25);                  // convert byte array to float
+      desiredPitch = map(atof((char*)buffer), 0, 99, -25, 25);                  // convert byte array to float
     }
     if (resData == 'R') {
       Serial.readBytes(buffer, 2);
-      desiredRoll = map(atof(buffer), 0, 99, -25, 25);
+      desiredRoll = map(atof((char*)buffer), 0, 99, -25, 25);
     }
     if (resData == 'Y') {
       Serial.readBytes(buffer, 2);
-      desiredYaw = map(atof(buffer), 0, 99, 0, 360);
+      desiredYaw = map(atof((char*)buffer), 0, 99, 0, 360);
+    }
+  }
+}
+
+void getBlueData(byte &numReceived, byte resData[], boolean &newData) {
+  if (Serial.available() > 0) {
+    // start message value is '<' and end is '>'
+    //Read data from bluetooth
+    while (Serial.available() > 0) {
+      rc = Serial.read();
+
+      if (recvInProgress == true) {
+        if (rc != endMarker) {
+          resData[ndx] = rc; //write recieve byte o array
+          ndx++;
+        }
+        else {
+          resData[ndx] = '\0'; // terminate the string
+          recvInProgress == false;
+          newData = true;
+          numReceived = ndx;  // save the max index of recieve byte
+          ndx = 0;
+        }
+      }
+      else if (rc == startMarker) {
+        // when cyckle find marker '<' start write byte to array
+        recvInProgress = true;
+      }
     }
   }
 }
